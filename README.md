@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# Watson Project
+![homepage](assets/D_MainPage.jpeg)
+![mobilepage](assets/MainPage.jpeg)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
+An open source, blog style website with support for text and images. Free from intrusive advertisements and clunky UIs, (PLACEHOLDER NAME) is the place where you can shout to the masses and be heard.
 
-## Available Scripts
+## Scrum Lead
+David Gales
 
-In the project directory, you can run:
+## Developers
+| Joey Chang 
+| Landon Spell 
+| Michel Pathinvo 
+| David Gales
 
-### `npm start`
+## User Stories
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### MVP
+- As a user, I want to be able to see the most read articles in the first page of the desktop or mobile version of the application
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- As a user, I want to be able to add an article, edit it, and delete it anytime
 
-### `npm test`
+- As a user, I want to be able to illustrate my post with a photo
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- As a user, I want to be able to add a title and my name to my article
 
-### `npm run build`
+- As a user, I want to be able to view an an article when clicked
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Stretch Goals
+- As a user, I would like to see a carousel that allows users to view different articles on the homepage
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- As a user, I would like to see the time-stamp of an article when it was last updated
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- As a user, I would like to see a modal pop-up when I hit the “delete” for an article so I don’t accidentally delete an article without confirmation
 
-### `npm run eject`
+- As a user, I would like to search for specific articles
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Super Stretch Goals
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- As a user, I want to be able to have my own account to be able to post blogs without having to type my name/info
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- As a user, I want to be able to “like” posts and save to a favorites component
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- As a user, I would like to make a comment onto an article
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- As a user, I would like to be able to click on an author to see all of their articles
