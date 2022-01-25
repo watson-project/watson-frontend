@@ -1,0 +1,19 @@
+App
+    - Nav (component)
+        - Link - Home
+        - Link - Stories
+        - Link - Add A Story
+    - Home (component) - GET
+        - Story Card (component) - GET
+    - Stories (component)
+        - Story Card (component) - GET
+        - Add A Story (Link) - POST
+    - Story (component)
+        - Article - GET
+        - Edit Button - Link to Edit page - PUT/PATCH
+        - Delete Button - Modal to confirm - DELETE
+    - Add a Story
+        - POST new story from form
+    - Edit a Story
+        - PUT/PATCH story from form
+    
