@@ -6,7 +6,7 @@
   align-items: center;
 }
 .addContainer h3 {
-  margin: 2rem 0;
+  margin: 1.5rem 0;
   font-weight: 200;
 }
 .form {
@@ -28,6 +28,7 @@
   height: 30px;
   padding: 0 1rem;
   margin-bottom: 2rem;
+  font-size: 14px;
 }
 .form textarea {
   background-color: #e4e2d8;
@@ -36,6 +37,8 @@
   margin-bottom: 3rem;
   overflow-y: scroll;
   padding: 1rem 1rem;
+  font-size: 14px;
+  text-align: left;
 }
 .form button {
   width: 120px;

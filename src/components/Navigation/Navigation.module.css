@@ -1,6 +1,7 @@
 .navContainer {
   height: 50px;
   width: 100%;
+  background-color: #eeeeee;
 }
 .linkContainer {
   background-color: #eeeeee;
@@ -14,10 +15,16 @@
   margin: 0 auto;
 }
 .linkContainer img {
-  height: 50px;
+  height: 30px;
+  /* border: 1px solid red; */
+  margin-top: 5px;
 }
 .linkContainer a {
   font-size: 16px;
   text-decoration: none;
   color: black;
+}
+
+.linkContainer .addLink {
+  font-size: 14px;
 }

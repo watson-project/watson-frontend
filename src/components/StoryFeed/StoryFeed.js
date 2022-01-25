@@ -6,6 +6,7 @@ import axios from 'axios';
 import StoryCard from '../StoryCard/StoryCard';
 // stylesheet
 import styles from './StoryFeed.module.css';
+import vector from '../../assets/Vector.png';
 
 function StoryFeed(props) {
   const { id } = useParams();
@@ -38,6 +39,7 @@ function StoryFeed(props) {
 
   return (
     <div className={styles.feedContainer}>
+      <img src={vector} alt='background' className={styles.vector} />
       <h4>Stories</h4>
       {/* <ul>
         {stories.map((story) => (

@@ -2,16 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Navigation.module.css';
 // logo
-import logo from '../../assets/logo.png';
+import logo from '../../assets/logo-small.png';
 
 function Navigation(props) {
   return (
     <div className={styles.navContainer}>
       <div className={styles.linkContainer}>
-        <Link to='/'>
+        <Link to='/' className={styles.heroimg}>
           <img src={logo} alt='company logo' />
         </Link>
-        <Link to='/add-story'>Add Story</Link>
+        <Link to='/add-story' className={styles.addLink}>Add Story</Link>
       </div>
     </div>
   );
