@@ -21,7 +21,7 @@ function StoryFeed(props) {
       }
     }, 5000);
     // Axios request
-    fetch('url')
+    fetch('https://watson-project.herokuapp.com/api/articles')
       .then((res) => res.json())
       .then((res) => {
         setStories(res);
@@ -30,54 +30,25 @@ function StoryFeed(props) {
     return () => clearTimeout(handleLoadingTimeOut);
   });
 
-  // if (loading && !stories.length) {
-  //   return <h2>Loading...</h2>;
-  // }
-  // if (!loading && !stories.length) {
-  //   return <h2>Something went wrong</h2>;
-  // }
+  if (loading && !stories.length) {
+    return <h2>Loading...</h2>;
+  }
+  if (!loading && !stories.length) {
+    return <h2>Something went wrong</h2>;
+  }
 
   return (
     <div className={styles.feedContainer}>
       {/* <img src={vector} alt='background' className={styles.vector} /> */}
       <div className={styles.vector}></div>
       <h4>Stories</h4>
-      {/* <ul>
+      <ul>
         {stories.map((story) => (
-          <StoryCard key={story._id} story={story} />
+          <Link to={`/stories/${stories._id}`}>
+            <StoryCard key={story._id} story={story} />
+          </Link>
         ))}
-      </ul> */}
-      <Link to={`/stories/${stories._id}`}>
-        <StoryCard />
-      </Link>
-      <Link to={`/stories/${stories._id}`}>
-        <StoryCard />
-      </Link>
-      <Link to={`/stories/${stories._id}`}>
-        <StoryCard />
-      </Link>
-      <Link to={`/stories/${stories._id}`}>
-        <StoryCard />
-      </Link>
-      <Link to={`/stories/${stories._id}`}>
-        <StoryCard />
-      </Link>
-      <Link to={`/stories/${stories._id}`}>
-        <StoryCard />
-      </Link>
-      <Link to={`/stories/${stories._id}`}>
-        <StoryCard />
-      </Link>
-      <Link to={`/stories/${stories._id}`}>
-        <StoryCard />
-      </Link>
-      <Link to={`/stories/${stories._id}`}>
-        <StoryCard />
-      </Link>
-      <Link to={`/stories/${stories._id}`}>
-        <StoryCard />
-      </Link>
-
+      </ul>
     </div>
   );
 }

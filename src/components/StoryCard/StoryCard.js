@@ -3,6 +3,7 @@ import styles from './StoryCard.module.css';
 import notFound from '../../assets/not-found.jpg';
 
 function StoryCard({ story }) {
+  // console.log(story.photo_url);
   return (
     <div className={styles.cardContainer}>
       {/* <div className={styles.textContainer}>
@@ -21,7 +22,7 @@ function StoryCard({ story }) {
         <span>{story ? story.createdAt : 'Time'}</span>
       </div>
       <img
-        src={story ? story.photo_url : notFound}
+        src='https://i.imgur.com/CAEEbMv.jpeg'
         alt={story ? story.title : 'image not found'}
       />
     </div>

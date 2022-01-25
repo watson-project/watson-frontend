@@ -16,21 +16,22 @@ function Home(props) {
       }
     }, 5000);
     // Axios request
-    fetch('url')
+    fetch('https://watson-project.herokuapp.com/api/articles')
       .then((res) => res.json())
       .then((res) => {
+        console.log(res);
         setStories(res);
       });
     // clear timeout
     return () => clearTimeout(handleLoadingTimeOut);
-  });
+  },[]);
 
-  // if (loading && !stories.length) {
-  //   return <h2>Loading...</h2>;
-  // }
-  // if (!loading && !stories.length) {
-  //   return <h2>Something went wrong</h2>;
-  // }
+  if (loading && !stories.length) {
+    return <h2>Loading...</h2>;
+  }
+  if (!loading && !stories.length) {
+    return <h2>Something went wrong</h2>;
+  }
   return (
     <div className={styles.homeContainer}>
       <div className={styles.heroContainer}>
@@ -39,25 +40,20 @@ function Home(props) {
           View Articles
         </Link>
         <p>
-          The Watson is home to malesuada proin libero nunc. Sagittis vitae et
-          leo duis ut. Cras ornare arcu dui vivamus arcu felis bibendum ut
-          tristique. Non arcu risus quis varius quam quisque. Mi quis hendrerit
-          dolor magna eget est lorem. In est ante in nibh mauris cursus mattis
-          molestie. Rhoncus urna neque viverra justo nec ultrices. Vulputate
-          dignissim suspendisse in est ante in. Pellentesque habitant morbi
-          tristique senectus et.
+          The Watson is an open sourced, blog style website with support for
+          text and images. Free from intrusive advertisements and clunky UI's,
+          The Watson is the place where you can shout to the masses and be
+          heard. Keeping the style of open source, every article is able to be
+          viewed, edited, and deleted by any user.
         </p>
       </div>
       <div className={styles.storiesContainer}>
-      <h3>Latest Stories</h3>
-        {/* <ul>
+        <h3>Latest Stories</h3>
+        <ul>
           {stories.map((story) => (
             <StoryCard key={story._id} story={story} />
           ))}
-        </ul> */}
-        <StoryCard/>
-        <StoryCard/>
-        <StoryCard/>
+        </ul>
       </div>
     </div>
   );

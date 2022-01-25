@@ -19,7 +19,8 @@
   position: fixed;
   z-index: -1;
   clip-path: polygon(0 0, 100% 0, 100% 56%, 0 18%);
-  background-color: #deecf1;
+  /* background-color: #5B92AD; */
+  background: linear-gradient(150deg, #a2bdee, #ffffff);
   background-size: cover;
   background-repeat: no-repeat;
   transform: scale(1.35);

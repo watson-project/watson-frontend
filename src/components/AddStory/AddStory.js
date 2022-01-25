@@ -16,11 +16,12 @@ function AddStory(props) {
     setStory({ ...story, [e.target.id]: e.target.valule });
   };
   const createNewStory = () => {
-    axios.post(`url`, story).then((res) => {
-      console.log(res);
-    });
-
-    navigate('/stories');
+    axios
+      .post(`https://watson-project.herokuapp.com/api/articles`, story)
+      .then((res) => {
+        console.log(res);
+        navigate('/stories');
+      });
   };
   const handleSubmit = (e) => {
     e.preventDefault();
