@@ -1,9 +1,36 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Home.module.css';
 import logo_hero from '../../assets/logo-hero.png';
+import StoryCard from '../StoryCard/StoryCard';
 
 function Home(props) {
+  const [stories, setStories] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    // timeout for fetching the data
+    const handleLoadingTimeOut = setTimeout(() => {
+      if (!stories.length) {
+        setLoading(false);
+      }
+    }, 5000);
+    // Axios request
+    fetch('url')
+      .then((res) => res.json())
+      .then((res) => {
+        setStories(res);
+      });
+    // clear timeout
+    return () => clearTimeout(handleLoadingTimeOut);
+  });
+
+  // if (loading && !stories.length) {
+  //   return <h2>Loading...</h2>;
+  // }
+  // if (!loading && !stories.length) {
+  //   return <h2>Something went wrong</h2>;
+  // }
   return (
     <div className={styles.homeContainer}>
       <div className={styles.heroContainer}>
@@ -20,6 +47,17 @@ function Home(props) {
           dignissim suspendisse in est ante in. Pellentesque habitant morbi
           tristique senectus et.
         </p>
+      </div>
+      <div className={styles.storiesContainer}>
+      <h3>Latest Stories</h3>
+        <ul>
+          {stories.map((story) => (
+            <StoryCard key={story._id} story={story} />
+          ))}
+        </ul>
+        <StoryCard/>
+        <StoryCard/>
+        <StoryCard/>
       </div>
     </div>
   );

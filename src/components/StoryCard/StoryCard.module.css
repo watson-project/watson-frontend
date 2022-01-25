@@ -2,6 +2,7 @@
   width: 100%;
   display: flex;
   margin-bottom: 1rem;
+  justify-content: space-between;
 }
 .cardContainer h5 {
   font-family: 'Poppins', sans-serif;

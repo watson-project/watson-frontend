@@ -26,12 +26,12 @@ function StoryFeed(props) {
     return () => clearTimeout(handleLoadingTimeOut);
   });
 
-  if (loading && !stories.length) {
-    return <h2>Loading...</h2>;
-  }
-  if (!loading && !stories.length) {
-    return <h2>Something went wrong</h2>;
-  }
+  // if (loading && !stories.length) {
+  //   return <h2>Loading...</h2>;
+  // }
+  // if (!loading && !stories.length) {
+  //   return <h2>Something went wrong</h2>;
+  // }
 
   return (
     <div className={styles.feedContainer}>
@@ -41,6 +41,9 @@ function StoryFeed(props) {
           <StoryCard key={story._id} story={story} />
         ))}
       </ul>
+      <StoryCard/>
+      <StoryCard/>
+      <StoryCard/>
     </div>
   );
 }
