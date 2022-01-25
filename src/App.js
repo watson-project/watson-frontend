@@ -8,6 +8,7 @@ import Home from './components/Home/Home';
 import StoryFeed from './components/StoryFeed/StoryFeed';
 import Footer from './components/Footer/Footer';
 import AddStory from './components/AddStory/AddStory';
+import Story from './components/Story/Story';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route index path='/' element={<Home />} />
         <Route path='/stories' element={<StoryFeed />} />
         <Route path='/add-story' element={<AddStory />} />
+        <Route path='/stories/:id' element={<Story />} />
       </Routes>
       <Footer />
     </>

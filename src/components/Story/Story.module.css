@@ -1,0 +1,63 @@
+.storyContainer {
+  padding: 0 2rem;
+  height: 100%;
+}
+.textContainer {
+  display: flex;
+  flex-direction: column;
+}
+.headerContainer {
+  display: flex;
+  margin: 1rem 0;
+  width: 100%;
+}
+.headerContainer button {
+  margin-left: auto;
+  text-decoration: none;
+  border: 1px solid #7d7d7d;
+  border-radius: 5px;
+  height: fit-content;
+  padding: 0.5rem 0.8rem;
+  background-color: transparent;
+  color: #7d7d7d;
+}
+/* Info Above Image */
+.aboveImage {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.aboveImage h5 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 200;
+}
+.aboveImage h5 span {
+  color: #9cb499;
+  font-weight: 400;
+}
+.date {
+  font-weight: 100;
+  color: #959595;
+}
+/* Image */
+.storyContainer img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  /* margin-bottom: 1rem; */
+}
+/* Paragraph */
+.storyContainer p {
+  font-size: 12px;
+  margin: 2rem 0;
+}
+/* Delete Button */
+.storyContainer .deleteBtn {
+  font-family: 'Playfair Display', serif;
+  margin: 1rem 0;
+  border: 1px solid #e8bdbd;
+  border-radius: 30px;
+  background-color: transparent;
+  color: black;
+  padding: 0.3rem 1.5rem;
+}

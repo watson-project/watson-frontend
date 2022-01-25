@@ -44,9 +44,9 @@ function StoryFeed(props) {
           <StoryCard key={story._id} story={story} />
         ))}
       </ul> */}
-      {/* <Link to={`/stories/${stories._id}`}>
+      <Link to={`/stories/${stories._id}`}>
         <StoryCard />
-      </Link> */}
+      </Link>
       <StoryCard />
       <StoryCard />
       <StoryCard />
