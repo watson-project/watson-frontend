@@ -9,7 +9,7 @@ import styles from './StoryFeed.module.css';
 import vector from '../../assets/Vector.png';
 
 function StoryFeed(props) {
-  const { id } = useParams();
+  // const { id } = useParams();
   const [stories, setStories] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -21,7 +21,7 @@ function StoryFeed(props) {
       }
     }, 5000);
     // Axios request
-    fetch('https://watson-project.herokuapp.com/api/articles')
+    fetch(`https://watson-project.herokuapp.com/api/articles/`)
       .then((res) => res.json())
       .then((res) => {
         setStories(res);
@@ -44,8 +44,8 @@ function StoryFeed(props) {
       <h4>Stories</h4>
       <ul>
         {stories.map((story) => (
-          <Link to={`/stories/${stories._id}`}>
-            <StoryCard key={story._id} story={story} />
+          <Link to={`/stories/${story._id}`} key={story._id}>
+            <StoryCard story={story} />
           </Link>
         ))}
       </ul>

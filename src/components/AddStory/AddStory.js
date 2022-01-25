@@ -12,14 +12,12 @@ function AddStory(props) {
     photo_url: '',
     content: '',
   });
-  const handleChange = (e) => {
-    setStory({ ...story, [e.target.id]: e.target.valule });
-  };
+
   const createNewStory = () => {
     axios
       .post(`https://watson-project.herokuapp.com/api/articles`, story)
       .then((res) => {
-        console.log(res);
+        console.log(res.data);
         navigate('/stories');
       });
   };
@@ -27,6 +25,9 @@ function AddStory(props) {
     e.preventDefault();
     createNewStory();
   };
+    const handleChange = (e) => {
+      setStory({ ...story, [e.target.id]: e.target.value });
+    };
 
   return (
     <div className={styles.addContainer}>

@@ -51,7 +51,9 @@ function Home(props) {
         <h3>Latest Stories</h3>
         <ul>
           {stories.map((story) => (
-            <StoryCard key={story._id} story={story} />
+            <Link to={`/stories/${story._id}`} key={story._id}>
+              <StoryCard story={story} />
+            </Link>
           ))}
         </ul>
       </div>

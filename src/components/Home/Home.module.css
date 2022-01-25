@@ -43,3 +43,7 @@
 .storiesContainer h3 {
   margin: 1rem 0;
 }
+.storiesContainer ul a {
+  color: black;
+  text-decoration: none;
+}
