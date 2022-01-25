@@ -18,7 +18,7 @@ function StoryCard({ story }) {
             ? story.title
             : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, sunt?'}
         </p>
-        <span>{story ? story.time : 'Time'}</span>
+        <span>{story ? story.createdAt : 'Time'}</span>
       </div>
       <img
         src={story ? story.photo_url : notFound}

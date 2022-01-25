@@ -11,7 +11,7 @@ function Navigation(props) {
         <Link to='/'>
           <img src={logo} alt='company logo' />
         </Link>
-        <Link to='/stories'>Add Story</Link>
+        <Link to='/add-story'>Add Story</Link>
       </div>
     </div>
   );
