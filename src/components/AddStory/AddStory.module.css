@@ -1,0 +1,51 @@
+.addContainer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.addContainer h3 {
+  margin: 2rem 0;
+  font-weight: 200;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 200px;
+  padding: 0 2rem;
+}
+.form label {
+  font-size: 14px;
+  font-weight: 200;
+  margin-bottom: 0.5rem;
+}
+.form input {
+  background-color: #e4e2d8;
+  border: none;
+  border-radius: 5px;
+  height: 30px;
+  padding: 0 1rem;
+  margin-bottom: 2rem;
+}
+.form textarea {
+  background-color: #e4e2d8;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 3rem;
+  overflow-y: scroll;
+  padding: 1rem 1rem;
+}
+.form button {
+  width: 120px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  background-color: #6d60f9;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 200;
+  font-size: 14px;
+}

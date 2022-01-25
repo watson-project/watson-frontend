@@ -8,7 +8,7 @@ function AddStory(props) {
   const navigate = useNavigate();
   const [story, setStory] = useState({
     title: '',
-    author: '',
+    author: 'Anonymous',
     photo_url: '',
     content: '',
   });
@@ -18,13 +18,15 @@ function AddStory(props) {
   const createNewStory = () => {
     axios.post(`url`, story).then((res) => {
       console.log(res);
-      navigate('/stories');
     });
+
+    navigate('/stories');
   };
   const handleSubmit = (e) => {
     e.preventDefault();
     createNewStory();
   };
+
   return (
     <div className={styles.addContainer}>
       <h3>Add A New Post</h3>
@@ -54,12 +56,15 @@ function AddStory(props) {
           placeholder='Photo URL'
         />
         <label htmlFor='content'>Content</label>
-        <input
+        <textarea
           type='text'
           onChange={handleChange}
           id='content'
+          className={styles.content}
           value={story.content}
           placeholder='Story...'
+          rows='15'
+          cols='50'
         />
         <button type='submit' className={styles.addBtn}>
           Add Post
