@@ -1,8 +1,9 @@
 .navContainer {
   height: 50px;
-  background-color: #eeeeee;
+  width: 100%;
 }
 .linkContainer {
+  background-color: #eeeeee;
   height: 50px;
   width: 100%;
   max-width: 1500px;
@@ -16,7 +17,7 @@
   height: 50px;
 }
 .linkContainer a {
-    font-size: 16px;
+  font-size: 16px;
   text-decoration: none;
   color: black;
 }
