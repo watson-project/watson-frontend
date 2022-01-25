@@ -1,0 +1,49 @@
+.homeContainer {
+  height: 100%;
+}
+.heroContainer {
+  background-image: url(../../assets/hero-bg.jpg);
+  height: 50vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.heroContainer img {
+  width: 150px;
+}
+.heroContainer .viewBtn {
+  background-color: #9cb499;
+  height: 40px;
+  width: 150px;
+  border: none;
+  border-radius: 10px;
+  color: black;
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  margin-top: 1rem;
+}
+.heroContainer p {
+  text-align: center;
+  padding: 0 2rem;
+  margin-top: 1rem;
+  transition: all 0.2s ease;
+}
+/* Stories Container */
+.storiesContainer {
+  padding: 0 1rem;
+}
+.storiesContainer h3 {
+  margin: 1rem 0;
+}
+.storiesContainer ul a {
+  color: black;
+  text-decoration: none;
+}
