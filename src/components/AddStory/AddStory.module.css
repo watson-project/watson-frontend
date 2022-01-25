@@ -5,10 +5,12 @@
   justify-content: center;
   align-items: center;
 }
+/* Add New Post */
 .addContainer h3 {
   margin: 1.5rem 0;
   font-weight: 200;
 }
+/* Form */
 .form {
   display: flex;
   flex-direction: column;
@@ -16,11 +18,13 @@
   min-width: 200px;
   padding: 0 2rem;
 }
+/* Form Label */
 .form label {
   font-size: 14px;
   font-weight: 200;
   margin-bottom: 0.5rem;
 }
+/* Form Input */
 .form input {
   background-color: #e4e2d8;
   border: none;
@@ -29,7 +33,9 @@
   padding: 0 1rem;
   margin-bottom: 2rem;
   font-size: 14px;
+  font-family: 'Poppins', sans-serif;
 }
+/* Form TextArea */
 .form textarea {
   background-color: #e4e2d8;
   border: none;
@@ -39,8 +45,12 @@
   padding: 1rem 1rem;
   font-size: 14px;
   text-align: left;
+  max-width: 435px;
+  font-family: 'Poppins', sans-serif;
 }
+/* Delete Button */
 .form button {
+  color: white;
   width: 120px;
   height: 40px;
   border: none;
@@ -51,4 +61,41 @@
   font-family: 'Playfair Display', serif;
   font-weight: 200;
   font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.form button:hover {
+  color: white;
+  width: 120px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  background-color: #594bf1;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 200;
+  font-size: 14px;
+}
+.form button:active {
+  color: white;
+  width: 120px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  background-color: #695ee7;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 200;
+  font-size: 14px;
+  box-shadow: inset 0px 2px 2px 0px rgba(54, 54, 54, 0.5);
+  transition: none;
+}
+/* Media Query for Desktop */
+@media (min-width: 500px) {
+  .addContainer {
+    max-width: 500px;
+    margin: 0 auto;
+  }
 }

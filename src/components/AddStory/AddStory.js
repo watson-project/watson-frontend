@@ -8,7 +8,7 @@ function AddStory(props) {
   const navigate = useNavigate();
   const [story, setStory] = useState({
     title: '',
-    author: 'Anonymous',
+    author: '',
     photo_url: '',
     content: '',
   });

@@ -39,7 +39,8 @@ function StoryFeed(props) {
 
   return (
     <div className={styles.feedContainer}>
-      <img src={vector} alt='background' className={styles.vector} />
+      {/* <img src={vector} alt='background' className={styles.vector} /> */}
+      <div className={styles.vector}></div>
       <h4>Stories</h4>
       {/* <ul>
         {stories.map((story) => (
@@ -49,17 +50,34 @@ function StoryFeed(props) {
       <Link to={`/stories/${stories._id}`}>
         <StoryCard />
       </Link>
-      <StoryCard />
-      <StoryCard />
-      <StoryCard />
-      <StoryCard />
-      <StoryCard />
-      <StoryCard />
-      <StoryCard />
-      <StoryCard />
-      <StoryCard />
-      <StoryCard />
-      <StoryCard />
+      <Link to={`/stories/${stories._id}`}>
+        <StoryCard />
+      </Link>
+      <Link to={`/stories/${stories._id}`}>
+        <StoryCard />
+      </Link>
+      <Link to={`/stories/${stories._id}`}>
+        <StoryCard />
+      </Link>
+      <Link to={`/stories/${stories._id}`}>
+        <StoryCard />
+      </Link>
+      <Link to={`/stories/${stories._id}`}>
+        <StoryCard />
+      </Link>
+      <Link to={`/stories/${stories._id}`}>
+        <StoryCard />
+      </Link>
+      <Link to={`/stories/${stories._id}`}>
+        <StoryCard />
+      </Link>
+      <Link to={`/stories/${stories._id}`}>
+        <StoryCard />
+      </Link>
+      <Link to={`/stories/${stories._id}`}>
+        <StoryCard />
+      </Link>
+
     </div>
   );
 }

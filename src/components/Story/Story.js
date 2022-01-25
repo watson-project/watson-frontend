@@ -5,6 +5,7 @@ import notFound from '../../assets/not-found.jpg';
 
 function Story(props) {
   const { story } = useParams();
+  
   return (
     <div className={styles.storyContainer}>
       <div className={styles.textContainer}>
