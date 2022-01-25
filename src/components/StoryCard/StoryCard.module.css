@@ -1,0 +1,48 @@
+/* Card Container */
+.cardContainer {
+  width: 100%;
+  display: flex;
+  margin-bottom: 2rem;
+  justify-content: space-between;
+  padding: 1rem;
+  border-left: 5px solid #bdbdbd;
+  transition: all 0.3s ease;
+}
+.cardContainer:hover {
+  width: 100%;
+  display: flex;
+  margin-bottom: 2rem;
+  justify-content: space-between;
+  padding: 1rem;
+  border-left: 5px solid #bdbdbd;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+/* Text Container */
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+/* Author */
+.cardContainer h5 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+}
+/* Title */
+.cardContainer p {
+  font-weight: bold;
+}
+/* Timestamp */
+.cardContainer span {
+  font-size: 10px;
+}
+/* Image */
+.cardContainer img {
+  height: 100px;
+  width: 100px;
+  margin-left: 1.5rem;
+}
+.cardContainer:hover {
+  border-left: 5px solid #4c8d43;
+}
