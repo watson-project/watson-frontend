@@ -1,0 +1,20 @@
+.cardContainer {
+  width: 100%;
+  display: flex;
+  margin-bottom: 1rem;
+}
+.cardContainer h5 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+}
+.cardContainer p {
+  font-weight: bold;
+}
+.cardContainer span {
+  font-size: 10px;
+}
+.cardContainer img {
+  height: 100px;
+  width: 100px;
+}
