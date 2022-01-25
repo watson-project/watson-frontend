@@ -1,3 +1,12 @@
 .feedContainer {
-    padding: 1rem 1rem;
+  padding: 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+.feedContainer h4 {
+  font-size: 24px;
+  font-weight: 200;
+}
+

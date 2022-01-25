@@ -50,11 +50,11 @@ function Home(props) {
       </div>
       <div className={styles.storiesContainer}>
       <h3>Latest Stories</h3>
-        <ul>
+        {/* <ul>
           {stories.map((story) => (
             <StoryCard key={story._id} story={story} />
           ))}
-        </ul>
+        </ul> */}
         <StoryCard/>
         <StoryCard/>
         <StoryCard/>

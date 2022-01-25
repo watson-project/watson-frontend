@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 // components
 import StoryCard from '../StoryCard/StoryCard';
@@ -6,6 +8,7 @@ import StoryCard from '../StoryCard/StoryCard';
 import styles from './StoryFeed.module.css';
 
 function StoryFeed(props) {
+  const { id } = useParams();
   const [stories, setStories] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -36,14 +39,25 @@ function StoryFeed(props) {
   return (
     <div className={styles.feedContainer}>
       <h4>Stories</h4>
-      <ul>
+      {/* <ul>
         {stories.map((story) => (
           <StoryCard key={story._id} story={story} />
         ))}
-      </ul>
-      <StoryCard/>
-      <StoryCard/>
-      <StoryCard/>
+      </ul> */}
+      {/* <Link to={`/stories/${stories._id}`}>
+        <StoryCard />
+      </Link> */}
+      <StoryCard />
+      <StoryCard />
+      <StoryCard />
+      <StoryCard />
+      <StoryCard />
+      <StoryCard />
+      <StoryCard />
+      <StoryCard />
+      <StoryCard />
+      <StoryCard />
+      <StoryCard />
     </div>
   );
 }

@@ -1,8 +1,11 @@
 .cardContainer {
   width: 100%;
   display: flex;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   justify-content: space-between;
+  /* border: 1px solid blue; */
+  padding: 1rem;
+  border-left: 8px solid #575757;
 }
 .cardContainer h5 {
   font-family: 'Poppins', sans-serif;
@@ -18,4 +21,13 @@
 .cardContainer img {
   height: 100px;
   width: 100px;
+}
+.textContainer {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.cardContainer:hover {
+  border-left: 8px solid blue;
 }
