@@ -8,10 +8,10 @@ import Home from './components/Home/Home';
 import StoryFeed from './components/StoryFeed/StoryFeed';
 import Footer from './components/Footer/Footer';
 import AddStory from './components/AddStory/AddStory';
+import EditStory from './components/EditStory/EditStory';
 import Story from './components/Story/Story';
 
 function App() {
-  
   return (
     <>
       <Navigation />
@@ -20,6 +20,7 @@ function App() {
         <Route path='/stories' element={<StoryFeed />} />
         <Route path='/add-story' element={<AddStory />} />
         <Route path='/stories/:id' element={<Story />} />
+        <Route path='/edit/:id' element={<EditStory />} />
       </Routes>
       <Footer />
     </>
