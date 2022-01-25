@@ -8,7 +8,9 @@ function Navigation(props) {
   return (
     <div className={styles.navContainer}>
       <div className={styles.linkContainer}>
-        <img src={logo} alt='company logo' />
+        <Link to='/'>
+          <img src={logo} alt='company logo' />
+        </Link>
         <Link to='/stories'>Add Story</Link>
       </div>
     </div>
