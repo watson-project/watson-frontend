@@ -1,13 +1,21 @@
 // stylesheets
 import './App.css';
 // dependencies
+import { Routes, Route } from 'react-router-dom';
+// components
+import Navigation from './components/Navigation/Navigation';
+import Home from './components/Home/Home';
+import StoryFeed from './components/StoryFeed/StoryFeed';
 
 function App() {
   return (
-    <div>
-      <h1>Hello world</h1>
-      <h2>This is my push test</h2>
-    </div>
+    <>
+      <Navigation />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/stories' element={<StoryFeed />} />
+      </Routes>
+    </>
   );
 }
 
