@@ -1,4 +1,6 @@
+// stylesheets
 import './App.css';
+// dependencies
 
 function App() {
   return (
