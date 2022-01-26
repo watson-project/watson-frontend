@@ -23,7 +23,7 @@ function EditStory(props) {
         console.log(res.data);
         setStory(res.data);
       });
-  }, []);
+  }, [id]);
   // use axios to PUT new data in edit page
   const editArticle = () => {
     axios
