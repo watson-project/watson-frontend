@@ -51,9 +51,13 @@
   .feedContainer ul {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    grid-gap: 2rem;
+    grid-gap: 1rem;
     grid-auto-flow: row;
     width: 100vw;
-    padding: 0 2rem;
+    padding: 0 1rem;
+  }
+  .feedContainer ul li {
+    width: fit-content;
+    margin: 0 auto;
   }
 }

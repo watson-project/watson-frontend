@@ -65,3 +65,8 @@
     margin-right: auto;
   }
 }
+@media (min-width: 1000px) {
+  .cardContainer {
+    min-width: 500px;
+  }
+}
