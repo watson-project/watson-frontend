@@ -24,7 +24,7 @@ function Home(props) {
       });
     // clear timeout
     return () => clearTimeout(handleLoadingTimeOut);
-  },[]);
+  }, []);
 
   if (loading && !stories.length) {
     return <h2>Loading...</h2>;
@@ -54,9 +54,11 @@ function Home(props) {
         <h3>Latest Stories</h3>
         <ul>
           {stories.map((story) => (
-            <Link to={`/stories/${story._id}`} key={story._id}>
-              <StoryCard story={story} />
-            </Link>
+            <li>
+              <Link to={`/stories/${story._id}`} key={story._id}>
+                <StoryCard story={story} />
+              </Link>
+            </li>
           ))}
         </ul>
       </div>
