@@ -1,10 +1,88 @@
 import React from 'react';
+import { useState } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import styles from './EditStory.module.css';
+import { useEffect } from 'react/cjs/react.development';
 
 function EditStory(props) {
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const [story, setStory] = useState({
+    title: '',
+    author: '',
+    photo_url: '',
+    content: '',
+  });
+  // Get the data from specified article
+  useEffect(() => {
+    axios
+      .get(`https://watson-project.herokuapp.com/api/articles/${id}`)
+      .then((res) => {
+        console.log(res.data);
+        setStory(res.data);
+      });
+  }, []);
+  // use axios to PUT new data in edit page
+  const editArticle = () => {
+    axios
+      .put(`https://watson-project.herokuapp.com/api/articles/${id}`, story)
+      .then((res) => {
+        console.log(res.data);
+        navigate(`/stories/${id}`);
+      });
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    editArticle();
+  };
+  const handleChange = (e) => {
+    setStory({ ...story, [e.target.id]: e.target.value });
+  };
   return (
-    <div>
-      <p>I'm the Edit Story</p>
+    <div className={styles.addContainer}>
+      <h3>Edit Post</h3>
+      <form onSubmit={handleSubmit} className={styles.form}>
+        <label htmlFor='author'>Author</label>
+        <input
+          type='text'
+          onChange={handleChange}
+          id='author'
+          value={story.author}
+          placeholder='Author'
+        />
+        <label htmlFor='title'>Title</label>
+        <input
+          type='text'
+          onChange={handleChange}
+          id='title'
+          value={story.title}
+          placeholder='Title'
+        />
+        <label htmlFor='photo_url'>Photo URL</label>
+        <input
+          type='text'
+          onChange={handleChange}
+          id='photo_url'
+          value={story.photo_url}
+          placeholder='Photo URL'
+        />
+        <label htmlFor='content'>Content</label>
+        <textarea
+          type='text'
+          onChange={handleChange}
+          id='content'
+          className={styles.content}
+          value={story.content}
+          placeholder='Story...'
+          rows='15'
+          cols='50'
+        />
+        <button type='submit' className={styles.addBtn}>
+          Edit Post
+        </button>
+      </form>
     </div>
   );
 }

@@ -1,8 +1,8 @@
 import React from 'react';
 import { useState } from 'react';
-import styles from './AddStory.module.css';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import styles from './AddStory.module.css';
 
 function AddStory(props) {
   const navigate = useNavigate();
