@@ -35,17 +35,20 @@ function Home(props) {
   return (
     <div className={styles.homeContainer}>
       <div className={styles.heroContainer}>
+        <p className={styles.firstP}>
+          {/* The Watson is an open sourced, blog style website with support for
+          text and images. Free from intrusive advertisements and clunky UI's,
+          The Watson is the place where you can shout to the masses and be
+          heard. Keeping the style of open source, every article is able to be
+          viewed, edited, and deleted by any user. */}
+          Ideas worth sharing.
+        </p>
+        <p className={styles.secondP}>Share yours.</p>
+        <p className={styles.thirdP}>Share the future.</p>
         <img src={logo_hero} alt='hero logo' />
         <Link to='/stories' className={styles.viewBtn}>
           View Articles
         </Link>
-        <p>
-          The Watson is an open sourced, blog style website with support for
-          text and images. Free from intrusive advertisements and clunky UI's,
-          The Watson is the place where you can shout to the masses and be
-          heard. Keeping the style of open source, every article is able to be
-          viewed, edited, and deleted by any user.
-        </p>
       </div>
       <div className={styles.storiesContainer}>
         <h3>Latest Stories</h3>

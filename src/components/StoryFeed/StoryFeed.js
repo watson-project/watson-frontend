@@ -41,12 +41,14 @@ function StoryFeed(props) {
     <div className={styles.feedContainer}>
       {/* <img src={vector} alt='background' className={styles.vector} /> */}
       <div className={styles.vector}></div>
-      <h4>Stories</h4>
+      <h4>Articles</h4>
       <ul>
         {stories.map((story) => (
-          <Link to={`/stories/${story._id}`} key={story._id}>
-            <StoryCard story={story} />
-          </Link>
+          <li>
+            <Link to={`/stories/${story._id}`} key={story._id}>
+              <StoryCard story={story} />
+            </Link>
+          </li>
         ))}
       </ul>
     </div>
