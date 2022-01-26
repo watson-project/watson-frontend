@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import styles from './EditStory.module.css';
-import { useEffect } from 'react/cjs/react.development';
+import { useEffect } from 'react';
 
 function EditStory(props) {
   const { id } = useParams();
