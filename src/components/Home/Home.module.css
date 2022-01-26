@@ -82,3 +82,18 @@
   max-width: 500px;
   margin: 0 auto;
 }
+
+@media (min-width: 1000px) {
+  .storiesContainer ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-gap: 1rem;
+    grid-auto-flow: row;
+    width: 100vw;
+    padding: 0 1rem;
+  }
+  .storiesContainer ul li {
+    min-width: 500px;
+    margin: 0 auto;
+  }
+}
