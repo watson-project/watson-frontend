@@ -34,6 +34,9 @@ function Story(props) {
         navigate('/stories');
       });
   };
+  function navigateEdit() {
+    navigate(`/edit/${id}`);
+  }
 
   return (
     <div className={styles.storyContainer}>
@@ -44,7 +47,7 @@ function Story(props) {
               ? story.title
               : 'Lorem ipsum dolor, sit amet consectetur adipisicing elit Laboriosam, officiis.'}
           </h5>
-          <button>Edit</button>
+          <button onClick={navigateEdit}>Edit</button>
         </section>
         <section className={styles.aboveImage}>
           <h5>
