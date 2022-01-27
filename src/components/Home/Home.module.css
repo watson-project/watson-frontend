@@ -4,7 +4,8 @@
 .heroContainer {
   /* background-image: url(../../assets/hero-bg.jpg); */
   clip-path: circle(95% at 50% 0);
-  background: linear-gradient(180deg, #4477eb, #2050c3);
+  /* background: linear-gradient(180deg, #4477eb, #2050c3); */
+  background: linear-gradient(180deg, rgba( 47, 109, 241, 100%), #265AD7);
   height: 50vh;
   background-size: cover;
   background-repeat: no-repeat;
@@ -15,6 +16,7 @@
 }
 .heroContainer img {
   width: 150px;
+  transition: all 0.3s ease;
   /* margin-top: -4rem; */
 }
 .heroContainer .viewBtn {
@@ -48,7 +50,7 @@
 .heroContainer p {
   font-family: 'Poppins', sans-serif;
   width: 90%;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 500;
   text-align: center;
   padding: 0 2rem;
@@ -63,7 +65,7 @@
   transition: all 0.3s ease;
 }
 .heroContainer .thirdP {
-  font-size: 24px;
+  font-size: 32px;
   font-weight: 700;
   letter-spacing: 0.1rem;
   opacity: 0;
@@ -96,6 +98,9 @@
 @media (min-width: 600px) {
   .heroContainer .firstP {
     margin-top: 0;
+  }
+  .heroContainer img {
+    width: 200px;
   }
 }
 @media (min-width: 1000px) {

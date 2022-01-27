@@ -23,12 +23,12 @@ function About(props) {
 					</p>
 				</div>
 				<h4>Developers:</h4>
-				<h5 className={styles.developerContainer}>
+				<div className={styles.developerContainer}>
 					<a
 						href='https://www.linkedin.com/in/landon-spell/'
 						rel='noopener noreferrer'
 						target='_blank'>
-						Landon Spells
+						Landon Spell
 					</a>
 					,{' '}
 					<a
@@ -51,7 +51,7 @@ function About(props) {
 						target='_blank'>
 						Joey Chang
 					</a>
-				</h5>
+				</div>
 			</div>
 		</>
 	);

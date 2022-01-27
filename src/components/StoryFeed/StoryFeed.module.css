@@ -5,12 +5,12 @@
   align-items: center;
 }
 .feedContainer h4 {
-  font-family: 'Bebas Neue', cursive;
-
+  /* font-family: 'Bebas Neue', cursive; */
+  font-family: 'Karla', sans-serif;
   color: black;
   /* color: #2e6cf1; */
   font-size: 36px;
-  font-weight: 200;
+  font-weight: 300;
   margin: 1rem 0;
 }
 /* Old Vector */
@@ -35,8 +35,9 @@
   position: fixed;
   z-index: -1;
   /* background: linear-gradient(180deg, #4477eb, #2050c3); */
-  background-color: rgb(250, 240, 228);
-
+  /* background-color: rgb(250, 240, 228); */
+  background-color: rgba( 218, 215, 211, 100%);
+  /* background-image: url(../../assets/turq.jpg); */
   background-size: cover;
   background-repeat: no-repeat;
   transform: scale(1.35);
@@ -63,6 +64,6 @@
   }
   .feedContainer ul li {
     min-width: 500px;
-    margin: 0 auto;
+    margin: 1rem auto;
   }
 }
