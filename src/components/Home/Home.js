@@ -19,8 +19,13 @@ function Home(props) {
     fetch('https://watson-project.herokuapp.com/api/articles')
       .then((res) => res.json())
       .then((res) => {
-        console.log(res);
-        setStories(res);
+        // Shuffle the res from api
+        // After shuffle, slice the first 3 objects and setStories(shuffled);
+        // https://stackoverflow.com/questions/19269545/how-to-get-a-number-of-random-elements-from-an-array
+        let shuffled = res
+          .sort(() => Math.random() - Math.random())
+          .slice(0, 3);
+        setStories(shuffled);
       });
     // clear timeout
     return () => clearTimeout(handleLoadingTimeOut);
@@ -29,9 +34,7 @@ function Home(props) {
   if (loading && !stories.length) {
     return <h2>Loading...</h2>;
   }
-  // if (!loading && !stories.length) {
-  //   return <h2>Something went wrong</h2>;
-  // }
+
   return (
     <div className={styles.homeContainer}>
       <div className={styles.heroContainer}>
@@ -54,7 +57,7 @@ function Home(props) {
         <h3>Latest Stories</h3>
         <ul>
           {stories.map((story) => (
-            <li>
+            <li key={story._id}>
               <Link to={`/stories/${story._id}`} key={story._id}>
                 <StoryCard story={story} />
               </Link>
