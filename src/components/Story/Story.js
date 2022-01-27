@@ -71,7 +71,9 @@ function Story(props) {
                   ? story.title
                   : 'Lorem ipsum dolor, sit amet consectetur adipisicing elit Laboriosam, officiis.'}
               </h5>
-              <button onClick={navigateEdit}>Edit</button>
+              <button onClick={navigateEdit} className={styles.editBtn}>
+                Edit
+              </button>
             </section>
             <section className={styles.aboveImage}>
               <h5>
