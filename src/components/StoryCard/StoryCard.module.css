@@ -32,8 +32,11 @@
 }
 /* Author */
 .cardContainer h5 {
-  font-family: 'Bebas Neue', cursive;
-  font-weight: 300;
+  /* font-family: 'Bebas Neue', cursive; */
+  font-family: 'Karla', sans-serif;
+
+  /* font-weight: 300; */
+  font-weight: 700;
   font-size: 14px;
   color: #2050c3;
 }

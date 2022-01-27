@@ -1,6 +1,6 @@
 /* Main Container */
 .addContainer {
-  height: calc(100vh - 70px);
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,6 +19,7 @@
   position: absolute;
   margin-top: -50vh;
   z-index: -1;
+  margin-bottom: auto;
 }
 /* Text Box Container */
 .textContainer {
@@ -40,8 +41,10 @@
   font-family: 'Poppins', sans-serif;
   font-size: 32px;
   margin: 1rem 0;
-  font-weight: 500;
+  font-weight: 400;
   color: white;
+  animation: fade 1s ease forwards;
+  opacity: 0;
 }
 /* Form */
 .form {
@@ -77,14 +80,14 @@
   background-color: #f5f5f5;
   border: none;
   border-radius: 5px;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   overflow-y: scroll;
   padding: 1rem 1rem;
   font-size: 14px;
   text-align: left;
   width: 100%;
   max-width: 535px;
-  max-height: 400px;
+  max-height: 300px;
   font-family: 'Karla', sans-serif;
 }
 /* "Add Post" Button */
@@ -114,4 +117,15 @@
   background-color: #265ed6;
   font-family: 'Bebas Neue', cursive;
   color: white;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 100%;
+    transform: translateY(0px);
+  }
 }
