@@ -33,9 +33,9 @@ function StoryFeed(props) {
   if (loading && !stories.length) {
     return <h2>Loading...</h2>;
   }
-  if (!loading && !stories.length) {
-    return <h2>Something went wrong</h2>;
-  }
+  // if (!loading && !stories.length) {
+  //   return <h2>Something went wrong</h2>;
+  // }
 
   return (
     <div className={styles.feedContainer}>

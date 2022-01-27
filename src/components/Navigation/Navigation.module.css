@@ -10,7 +10,7 @@
   background-color: #ffffff;
   height: 50px;
   width: 100%;
-  max-width: 1500px;
+  /* max-width: 1500px; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -44,12 +44,13 @@
   border-radius: 5px;
   background-color: transparent;
   transition: all 0.2s ease;
+  margin: 0 0.5rem;
 }
 .links a:hover {
   /* font-size: 16px; */
   text-decoration: none;
   color: black;
-  background-color: rgb(209, 209, 209);
+  background-color: rgb(230, 230, 230);
 }
 /* Page Links */
 .linkContainer .addLink {
