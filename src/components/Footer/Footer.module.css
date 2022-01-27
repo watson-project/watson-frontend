@@ -1,11 +1,12 @@
 .footerContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 20px;
-  margin-top: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 20px;
+	margin-top: auto;
 }
 .footerContainer span {
-  font-size: 10px;
-  color: #555555;
+	font-size: 10px;
+	color: #555555;
+	font-weight: bolder;
 }
