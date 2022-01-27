@@ -10,6 +10,7 @@ import Footer from './components/Footer/Footer';
 import AddStory from './components/AddStory/AddStory';
 import EditStory from './components/EditStory/EditStory';
 import Story from './components/Story/Story';
+import About from './components/About/About';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route index path='/' element={<Home />} />
         <Route path='/stories' element={<StoryFeed />} />
         <Route path='/add-story' element={<AddStory />} />
+        <Route path='/about' element={<About />}/>
         <Route path='/stories/:id' element={<Story />} />
         <Route path='/edit/:id' element={<EditStory />} />
       </Routes>
