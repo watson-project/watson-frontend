@@ -2,14 +2,15 @@
 .navContainer {
   height: 50px;
   width: 100%;
-  background-color: #eeeeee;
+  background-color: #ffffff;
+  font-family: 'Karla', sans-serif;
 }
 /* Link Container */
 .linkContainer {
-  background-color: #eeeeee;
+  background-color: #ffffff;
   height: 50px;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1500px;
   display: flex;
   justify-content: space-between;
   align-items: center;
