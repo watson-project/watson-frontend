@@ -31,7 +31,7 @@ function AddStory(props) {
 
   return (
     <div className={styles.addContainer}>
-      <h3>Add A New Post</h3>
+      <h3>Add A New Article</h3>
       <form onSubmit={handleSubmit} className={styles.form}>
         <label htmlFor='author'>Author</label>
         <input
