@@ -1,9 +1,10 @@
 .addContainer {
-  height: 100%;
+  height: calc(100vh - 70px);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0 1rem;
 }
 .bgContainer {
   height: 50vh;
@@ -28,6 +29,8 @@
     rgba(0, 0, 0, 0.07) 0px 16px 16px;
   padding-top: 2rem;
   border-radius: 5px;
+  width: 100%;
+  max-width: 600px;
 }
 /* Add New Post */
 .addContainer h3 {
@@ -48,16 +51,19 @@
 /* Form Label */
 .form label {
   font-size: 14px;
-  font-weight: 200;
+  font-weight: 400;
   margin-bottom: 0.5rem;
   font-family: 'Poppins', sans-serif;
+  color: #454545;
 }
 /* Form Input */
 .form input {
-  background-color: #e4e2d8;
+  /* background-color: #e4e2d8; */
+  background-color: #f5f5f5;
   border: none;
   border-radius: 5px;
   height: 50px;
+  width: 100%;
   padding: 0 1rem;
   margin-bottom: 1.8rem;
   font-size: 14px;
@@ -65,7 +71,7 @@
 }
 /* Form TextArea */
 .form textarea {
-  background-color: #e4e2d8;
+  background-color: #f5f5f5;
   border: none;
   border-radius: 5px;
   margin-bottom: 3rem;
@@ -73,8 +79,10 @@
   padding: 1rem 1rem;
   font-size: 14px;
   text-align: left;
-  max-width: 435px;
-  font-family: 'Poppins', sans-serif;
+  width: 100%;
+  max-width: 535px;
+  max-height: 400px;
+  font-family: 'Karla', sans-serif;
 }
 .form button {
   color: #2e6cf1;
@@ -100,11 +108,4 @@
   background-color: #265ed6;
   font-family: 'Bebas Neue', cursive;
   color: white;
-}
-/* Media Query for Desktop */
-@media (min-width: 500px) {
-  .addContainer {
-    max-width: 500px;
-    margin: 0 auto;
-  }
 }
