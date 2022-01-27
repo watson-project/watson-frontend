@@ -8,6 +8,7 @@ import axios from 'axios';
 function Story(props) {
   const { id } = useParams();
   const navigate = useNavigate();
+  const [modal, setModal] = useState(false);
 
   const [story, setStory] = useState(null);
   async function getStory() {
@@ -27,6 +28,7 @@ function Story(props) {
     getStory();
     return setStory(null);
   }, []);
+
   const handleDelete = () => {
     axios
       .delete(`https://watson-project.herokuapp.com/api/articles/${id}`)
@@ -38,39 +40,63 @@ function Story(props) {
     navigate(`/edit/${id}`);
   }
 
+  const editShowPage = () => {
+    setModal(true);
+  };
+  const closeModal = () => {
+    setModal(false);
+  };
   return (
-    <div className={styles.storyContainer}>
-      <div className={styles.textContainer}>
-        <section className={styles.headerContainer}>
-          <h5>
+    <>
+      {modal ? (
+        <div className={styles.modalContainer}>
+          <div className={styles.bgContainer}></div>
+
+          <div className={styles.modalText}>
+            <h2>Are you sure you want to delete this article?</h2>
+            <button className={styles.deleteBtn} onClick={handleDelete}>
+              Delete
+            </button>
+            <button className={styles.nevermindBtn} onClick={closeModal}>
+              Nevermind
+            </button>
+          </div>
+        </div>
+      ) : (
+        <div className={styles.storyContainer}>
+          <div className={styles.textContainer}>
+            <section className={styles.headerContainer}>
+              <h5>
+                {story
+                  ? story.title
+                  : 'Lorem ipsum dolor, sit amet consectetur adipisicing elit Laboriosam, officiis.'}
+              </h5>
+              <button onClick={navigateEdit}>Edit</button>
+            </section>
+            <section className={styles.aboveImage}>
+              <h5>
+                Author: <span>{story ? story.author : 'Unknown'}</span>
+              </h5>
+              <span className={styles.date}>
+                {story ? moment(story.createdAt).format('ll') : 'Jan 20, 2022'}
+              </span>
+            </section>
+          </div>
+          <img
+            src={story ? story.photo_url : notFound}
+            alt={story ? story.title : 'Not Found'}
+          />
+          <p>
             {story
-              ? story.title
-              : 'Lorem ipsum dolor, sit amet consectetur adipisicing elit Laboriosam, officiis.'}
-          </h5>
-          <button onClick={navigateEdit}>Edit</button>
-        </section>
-        <section className={styles.aboveImage}>
-          <h5>
-            Author: <span>{story ? story.author : 'Unknown'}</span>
-          </h5>
-          <span className={styles.date}>
-            {story ? moment(story.createdAt).format('ll') : 'Jan 20, 2022'}
-          </span>
-        </section>
-      </div>
-      <img
-        src={story ? story.photo_url : notFound}
-        alt={story ? story.title : 'Not Found'}
-      />
-      <p>
-        {story
-          ? story.content
-          : "Oh Mom, there's nothing wrong with calling a boy. Really. Quiet. C'mon. Can't be. This is nuts. Aw, c'mon. Well looky what we have here. No no no, you're staying right here with me. C'mon."}
-      </p>
-      <button className={styles.deleteBtn} onClick={handleDelete}>
-        Delete
-      </button>
-    </div>
+              ? story.content
+              : "Oh Mom, there's nothing wrong with calling a boy. Really. Quiet. C'mon. Can't be. This is nuts. Aw, c'mon. Well looky what we have here. No no no, you're staying right here with me. C'mon."}
+          </p>
+          <button className={styles.deleteBtn} onClick={editShowPage}>
+            Delete
+          </button>
+        </div>
+      )}
+    </>
   );
 }
 
