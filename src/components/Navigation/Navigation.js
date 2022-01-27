@@ -13,7 +13,7 @@ function Navigation(props) {
           <img src={logo} alt='company logo' />
         </Link>
         <div className={styles.links}>
-          <Link to='/' className={styles.links}>
+          <Link to='/' className={styles.addLink}>
             Home
           </Link>
           <Link to='/stories' className={styles.addLink}>
