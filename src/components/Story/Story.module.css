@@ -144,7 +144,6 @@
   font-family: 'Karla', sans-serif;
   font-weight: 700;
   animation: warning 5s infinite ease-in-out;
-  /* color: #f13b2e; */
   margin-bottom: 1rem;
 }
 .modalText button {
