@@ -99,10 +99,7 @@
 .modalContainer {
   height: calc(100vh - 70px);
   width: 100vw;
-  /* background-color: white; */
   display: flex;
-  /* justify-content: center; */
-  /* align-items: center; */
 }
 /* Background Container */
 .bgContainer {
@@ -123,7 +120,7 @@
 }
 /* Modal Box */
 .modalText {
-  margin: 0 auto;
+  margin: 0 1rem;
   margin-top: -20rem;
   height: fit-content;
   width: fit-content;
@@ -142,8 +139,9 @@
 /* Modal h2 Text */
 .modalText h2 {
   font-family: 'Karla', sans-serif;
-  font-weight: 400;
+  font-weight: 700;
   animation: warning 5s infinite ease-in-out;
+  /* color: #f13b2e; */
 }
 .modalText button {
   background-color: white;
