@@ -53,6 +53,7 @@
   width: 100%;
   min-width: 200px;
   padding: 0 2rem;
+  transition: all 0.2s ease;
 }
 /* Form Labels */
 .form label {
@@ -117,6 +118,12 @@
   background-color: #265ed6;
   font-family: 'Bebas Neue', cursive;
   color: white;
+}
+
+@media (max-width: 600px) {
+  .form {
+    padding: 0 1rem;
+  }
 }
 
 @keyframes fade {
