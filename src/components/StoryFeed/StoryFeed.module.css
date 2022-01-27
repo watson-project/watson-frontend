@@ -7,8 +7,8 @@
 .feedContainer h4 {
   font-family: 'Bebas Neue', cursive;
 
-  /* color: white; */
-  color: #2e6cf1;
+  color: black;
+  /* color: #2e6cf1; */
   font-size: 36px;
   font-weight: 200;
   margin: 1rem 0;
@@ -35,7 +35,7 @@
   position: fixed;
   z-index: -1;
   /* background: linear-gradient(180deg, #4477eb, #2050c3); */
-  background-color: white;
+  background-color: rgb(250, 240, 228);
 
   background-size: cover;
   background-repeat: no-repeat;
@@ -54,10 +54,11 @@
 @media (min-width: 1000px) {
   .feedContainer ul {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
     grid-gap: 1rem;
     grid-auto-flow: row;
     width: 100vw;
+    max-width: 1600px;
     padding: 0 1rem;
   }
   .feedContainer ul li {
