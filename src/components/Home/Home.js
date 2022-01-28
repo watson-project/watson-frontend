@@ -44,8 +44,8 @@ function Home(props) {
         <p className={styles.secondP}>Share yours.</p>
         <p className={styles.thirdP}>Share the future.</p>
         <img src={logo_hero} alt='hero logo' />
-        <Link to='/stories' className={styles.viewBtn}>
-          View Articles
+        <Link to='/loginpage' className={styles.viewBtn}>
+          Login
         </Link>
       </div>
       <div className={styles.storiesContainer}>
@@ -63,5 +63,4 @@ function Home(props) {
     </div>
   );
 }
-
 export default Home;
