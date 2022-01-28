@@ -5,7 +5,6 @@ import styles from './Login.module.css';
 
 function Login(props) {
     const [user, setUser] = useState({});
-
     return (
 			<div className={styles.addContainer}>
 				<div className={styles.bgContainer}></div>
