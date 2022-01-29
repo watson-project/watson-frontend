@@ -66,9 +66,7 @@
 }
 
 .blobs {
-    display: grid; 
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    
     width: 500px;
     opacity: 55%;
     z-index: -1;
