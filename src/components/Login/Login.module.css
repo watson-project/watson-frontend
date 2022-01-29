@@ -1,9 +1,9 @@
 /* Main Container */
 .addContainer {
-  height: 100%;
+  height: calc(100vh - 80px);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   margin: 0 1rem;
 }
@@ -12,15 +12,15 @@
   height: 50vh;
   width: 100vw;
   clip-path: circle(100% at 50% 0);
-  background: linear-gradient(180deg, rgba(47, 109, 241, 100%), #265ad7);
+  background: linear-gradient(180deg, rgba(47, 109, 241, 100%), #263455);
   height: 60vh;
   background-size: cover;
   background-repeat: no-repeat;
   position: absolute;
-  margin-top: -50vh;
   z-index: -1;
   margin-bottom: auto;
 }
+
 /* Text Box Container */
 .textContainer {
   display: flex;
@@ -31,10 +31,11 @@
   box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px,
     rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px,
     rgba(0, 0, 0, 0.07) 0px 16px 16px;
-  padding-top: 2rem;
+  padding-top: 1rem;
   border-radius: 5px;
   width: 100%;
   max-width: 600px;
+  height: 25rem;
 }
 /* "Add A New Article" Text */
 .addContainer h3 {
@@ -45,6 +46,7 @@
   color: white;
   animation: fade 1s ease forwards;
   opacity: 0;
+  margin-top: 10rem;
 }
 /* Form */
 .form {
@@ -121,13 +123,29 @@
 }
 .form .registerBtn {
     color: rgb(115, 168, 218);
-    font-family: 'Bebas Neue', cursive;
-    padding-bottom: 2%;
+    font-family: 'Poppins', cursive;
+    /* padding-bottom: 2%; */
     display: flex;
     justify-content: center;
-    margin-bottom: 5px;
-    
-    
+    /* margin-bottom: 5px; */
+    text-decoration: none;
+}
+
+.registerText {
+  color: #2D6CF1;
+  /* border: 2px solid red;  */
+  max-width: fit-content;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: auto;
+  font-size: 16px;
+  margin-bottom: 5px;
+  font-family: 'Poppins', cursive;
+}
+
+.registerText a:hover {
+  color: rgba(0, 0, 0, 0.07);
 }
 
 @media (max-width: 600px) {
