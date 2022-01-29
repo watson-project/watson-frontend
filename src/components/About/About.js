@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './About.module.css';
 import logo from '../../assets/logo-hero.png';
 
+
 function About(props) {
 	return (
 		<>

@@ -4,6 +4,7 @@ import styles from './Login.module.css';
 import axios from 'axios';
 
 function Login(props) {
+
 	const [user, setUser] = useState({
 		email: '',
 		password: '',
@@ -29,11 +30,13 @@ function Login(props) {
 		setUser({ ...user, [event.target.id]: event.target.value });
 	};
 
+
 	return (
 		<div className={styles.addContainer}>
 			<div className={styles.bgContainer}></div>
 			<h3>Log In to Your Account</h3>
 			<div className={styles.textContainer}>
+
 				<form className={styles.form} onSubmit={handleSubmit}>
 					<label htmlFor='email'>Email:</label>
 					<input
@@ -61,6 +64,7 @@ function Login(props) {
 						</Link>
 						&nbsp;now!
 					</span>
+
 				</form>
 			</div>
 		</div>
