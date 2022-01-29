@@ -7,13 +7,14 @@ function About(props) {
 	return (
 		<>
 			<h3 className={styles.titleContainer}>
-				Every voice needs a&nbsp;<span className={styles.listenerContainer}>Listener.</span>
+				Every voice needs a&nbsp;
+				<span className={styles.listenerContainer}>Listener.</span>
 			</h3>
 			<div className={styles.aboutContainer}>
 				<div className={styles.storyContainer}>
-					<img src={logo} alt='hero-logo' className={styles.imageContainer} />
-					<h4>Our Story</h4>
-					<p>
+					{/* <img src={logo} alt='hero-logo' className={styles.imageContainer} /> */}
+					<span>Our Story</span>
+					<p className={styles.textContainer}>
 						Our best chance of keeping the peace is to reach out. The Watson is
 						a place full of listeners, allowing users to speak, think of
 						creative ideas and spark conversations. An open platform where

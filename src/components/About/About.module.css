@@ -1,39 +1,78 @@
 .aboutContainer {
-    display: flex;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	max-width: 100vh;
+	margin: auto;
+	height: calc(100vh - 185px);
+}
+
+.storyContainer {
+	display: flex;
     flex-direction: column;
-    justify-content: center;
+	justify-content: center;
+	align-items: center;
+    text-align: center;
+}
+
+.storyContainer span {
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.textContainer {
+	/* height: 50vh; */
+    display: flex;
     align-items: center;
-    max-width: 450px;
-    margin: auto;
-    height: calc(100vh - 125px);
-    /* border: 2px solid red;  */
+	width: 450px;
+    height: 300px;
+    padding: 5px;
+	margin: auto;
+    border: 1px solid black;
 }
 
 .imageContainer {
-    max-width: 25%;
+	max-width: 25%;
 }
 
 .listenerContainer {
-    font-weight: 1000;
+	font-weight: 1000;
 }
 
 .titleContainer {
-    font-weight: 100;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 25px 0 0 0;
+	font-weight: 100;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 25px 0 0 0;
+    height: 100px;
+	clip-path: circle(95% at 50% 0);
+	/* background: linear-gradient(180deg, #4477eb, #2050c3); */
+	background: linear-gradient(180deg, rgb(152, 180, 240), #265ad7);
 }
 
 .developerContainer a {
-    text-decoration: none;
-    color: #111111;
+	text-decoration: none;
+	color: #111111;
 }
 
 .developerContainer a:hover {
-    color: #ff2323;
+	color: #ff2323;
 }
 
 .aboutContainer h4 {
-    font-weight: 500;
+	font-weight: 500;
+}
+
+.blobs {
+    
+    width: 500px;
+    opacity: 55%;
+    z-index: -1;
+    position: absolute;
+}
+
+.blobL path {
+    fill: yellow;
 }
