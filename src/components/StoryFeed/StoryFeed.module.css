@@ -1,12 +1,17 @@
 .feedContainer {
-  padding: 1rem 1rem;
+  padding: 0 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .feedContainer h4 {
-  font-size: 24px;
-  font-weight: 200;
+  /* font-family: 'Bebas Neue', cursive; */
+  font-family: 'Karla', sans-serif;
+  color: black;
+  /* color: #2e6cf1; */
+  font-size: 36px;
+  font-weight: 300;
+  margin: 1rem 0;
 }
 /* Old Vector */
 /* .vector {
@@ -15,19 +20,50 @@
   transform: scale(1.35);
 } */
 /* New Vector */
-.vector {
+/* .vector {
   position: fixed;
   z-index: -1;
   clip-path: polygon(0 0, 100% 0, 100% 56%, 0 18%);
-  /* background-color: #5B92AD; */
   background: linear-gradient(150deg, #a2bdee, #ffffff);
   background-size: cover;
   background-repeat: no-repeat;
   transform: scale(1.35);
   height: 100vh;
   width: 100vw;
+} */
+.vector {
+  position: fixed;
+  z-index: -1;
+  /* background: linear-gradient(180deg, #4477eb, #2050c3); */
+  /* background-color: rgb(250, 240, 228); */
+  background-color: rgba( 218, 215, 211, 100%);
+  /* background-image: url(../../assets/turq.jpg); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  transform: scale(1.35);
+  height: 100vh;
+  width: 100vw;
+}
+.feedContainer ul li {
+  list-style-type: none;
 }
 .feedContainer ul a {
   color: black;
   text-decoration: none;
+}
+
+@media (min-width: 1000px) {
+  .feedContainer ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    grid-gap: 1rem;
+    grid-auto-flow: row;
+    width: 100vw;
+    max-width: 1600px;
+    padding: 0 1rem;
+  }
+  .feedContainer ul li {
+    min-width: 500px;
+    margin: 1rem auto;
+  }
 }

@@ -1,0 +1,39 @@
+.aboutContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 450px;
+    margin: auto;
+    height: calc(100vh - 125px);
+    /* border: 2px solid red;  */
+}
+
+.imageContainer {
+    max-width: 25%;
+}
+
+.listenerContainer {
+    font-weight: 1000;
+}
+
+.titleContainer {
+    font-weight: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 0 0 0;
+}
+
+.developerContainer a {
+    text-decoration: none;
+    color: #111111;
+}
+
+.developerContainer a:hover {
+    color: #ff2323;
+}
+
+.aboutContainer h4 {
+    font-weight: 500;
+}

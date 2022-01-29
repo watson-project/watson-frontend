@@ -2,7 +2,10 @@
   height: 100%;
 }
 .heroContainer {
-  background-image: url(../../assets/hero-bg.jpg);
+  /* background-image: url(../../assets/hero-bg.jpg); */
+  clip-path: circle(95% at 50% 0);
+  /* background: linear-gradient(180deg, #4477eb, #2050c3); */
+  background: linear-gradient(180deg, rgba( 47, 109, 241, 100%), #265AD7);
   height: 50vh;
   background-size: cover;
   background-repeat: no-repeat;
@@ -13,37 +16,129 @@
 }
 .heroContainer img {
   width: 150px;
+  transition: all 0.3s ease;
+  /* margin-top: -4rem; */
 }
 .heroContainer .viewBtn {
-  background-color: #9cb499;
+  background-color: white;
   height: 40px;
   width: 150px;
   border: none;
   border-radius: 10px;
-  color: black;
-  font-family: 'Playfair Display', serif;
-  font-size: 14px;
+  color: #2e6cf1;
+  font-family: 'Bebas Neue', cursive;
+  font-weight: 200;
+  font-size: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-decoration: none;
   margin-top: 1rem;
+  opacity: 0;
+  animation: simpleFade 1s ease forwards;
+  animation-delay: 2s;
+  transition: all 0.2s ease;
+  box-shadow: none;
+}
+.heroContainer .viewBtn:hover {
+  background-color: white;
+  color: #2e6cf1;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
 }
 .heroContainer p {
+  font-family: 'Poppins', sans-serif;
+  width: 90%;
+  font-size: 20px;
+  font-weight: 500;
   text-align: center;
   padding: 0 2rem;
-  margin-top: 1rem;
+  margin-top: 0rem;
   transition: all 0.2s ease;
+  color: white;
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
 }
+.heroContainer .firstP {
+  margin-top: -2rem;
+  transition: all 0.3s ease;
+}
+.heroContainer .thirdP {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 1s;
+}
+
 /* Stories Container */
 .storiesContainer {
   padding: 0 1rem;
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
 }
 .storiesContainer h3 {
-  margin: 1rem 0;
+  font-family: 'Bebas Neue', cursive;
+  color: rgb(48, 42, 42);
+  margin: 1rem auto;
 }
 .storiesContainer ul a {
   color: black;
   text-decoration: none;
+}
+.storiesContainer ul li {
+  list-style-type: none;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+@media (min-width: 600px) {
+  .heroContainer .firstP {
+    margin-top: 0;
+  }
+  .heroContainer img {
+    width: 200px;
+  }
+}
+@media (min-width: 1000px) {
+  .storiesContainer {
+    max-width: 1500px;
+    margin: 1rem auto;
+  }
+  .storiesContainer ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    grid-gap: 1rem;
+    grid-auto-flow: row;
+    width: 100vw;
+    max-width: 1600px;
+    padding: 0 1rem;
+    margin: 0 auto;
+  }
+  .storiesContainer ul li {
+    min-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+@keyframes simpleFade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
