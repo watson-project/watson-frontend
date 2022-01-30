@@ -3,8 +3,12 @@ import { Link, useNavigate } from 'react-router-dom';
 import styles from './Login.module.css';
 import axios from 'axios';
 import { UserContext } from '../../context/UserContext';
+import { useRef } from 'react';
+import { AiFillEye } from 'react-icons/ai';
 
 function Login(props) {
+  const togglePass = useRef(null);
+  const [showPass, setShowPass] = useState(false);
   const [user, setUser] = useState({
     email: '',
     password: '',
@@ -23,10 +27,14 @@ function Login(props) {
           setErrMsg(res.data);
         }
         if (res.data !== 'The provided username or password is incorrect') {
+          console.log(res);
           setUserContext((user) => {
             navigate('/');
+            console.log(res);
             return { ...user, token: res.data.token };
           });
+          // setUserContext({...user, token: res.data.token });
+          // navigate('/');
         }
       });
   };
@@ -38,6 +46,16 @@ function Login(props) {
 
   const handleChange = (event) => {
     setUser({ ...user, [event.target.id]: event.target.value });
+  };
+
+  const showPassword = () => {
+    if (showPass) {
+      togglePass.current.attributes['1'].value = 'text';
+    }
+    if (!showPass) {
+      togglePass.current.attributes['1'].value = 'password';
+    }
+    setShowPass(!showPass);
   };
 
   return (
@@ -56,14 +74,24 @@ function Login(props) {
             autoComplete='off'
           />
           <label htmlFor='password'>Password:</label>
-          <input
-            id='password'
-            type='text'
-            value={user.password}
-            placeholder='password'
-            onChange={handleChange}
-            autoComplete='off'
-          />
+          <div className={styles.passwordDiv}>
+            <input
+              ref={togglePass}
+              id='password'
+              className={styles.password}
+              type='password'
+              value={user.password}
+              placeholder='password'
+              onChange={handleChange}
+              autoComplete='off'
+            />
+            <button
+              type='button'
+              onClick={showPassword}
+              className={styles.toggleEye}>
+              <AiFillEye />
+            </button>
+          </div>
           {errMsg ? <p className={styles.errMsg}>{errMsg}</p> : ''}
           <button className={styles.loginBtn} type='submit'>
             <h4>login</h4>

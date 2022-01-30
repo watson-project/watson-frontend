@@ -16,7 +16,7 @@ function Register(props) {
       .then((res) => {
         console.log(registered);
         console.log(res);
-        navigate('/');
+        navigate('/login');
       });
   };
 
@@ -56,6 +56,13 @@ function Register(props) {
             <button className={styles.loginBtn} type='submit'>
               Register
             </button>
+            <span className={styles.registerText}>
+              Already have an account?&nbsp;
+              <Link to='/login' className={styles.registerBtn}>
+                Login
+              </Link>
+              &nbsp;now!
+            </span>
           </form>
         </div>
       </div>
