@@ -1,30 +1,47 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import styles from './AddStory.module.css';
+import { UserContext } from '../../context/UserContext';
 
 function AddStory(props) {
+  const [userContext, setUserContext] = useContext(UserContext);
+
   const navigate = useNavigate();
   const [story, setStory] = useState({
     title: '',
     author: '',
     photo_url: '',
     content: '',
+    // owner: userContext,
   });
 
   const createNewStory = () => {
     axios
-      .post(`https://watson-project.herokuapp.com/api/articles`, story)
+      .post(`http://localhost:4000/api/articles`, story)
       .then((res) => {
-        console.log(res.data);
+        console.log(res);
         navigate('/stories');
       });
+    // fetch(`http://localhost:4000/api/articles`, {
+    //   method: 'POST',
+    //   body: JSON.stringify(story),
+    //   headers: { 'Content-Type': 'application/json' },
+    // })
+    //   .then((res) => {
+    //     return res.json();
+    //   })
+    //   .then((res) => {
+    //     navigate('/stories');
+    //   });
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     createNewStory();
   };
+
   const handleChange = (e) => {
     setStory({ ...story, [e.target.id]: e.target.value });
   };
@@ -32,7 +49,7 @@ function AddStory(props) {
   return (
     <div className={styles.addContainer}>
       <div className={styles.bgContainer}></div>
-        <h3>Add A New Article</h3>
+      <h3>Add A New Article</h3>
       <div className={styles.textContainer}>
         <form onSubmit={handleSubmit} className={styles.form}>
           <label htmlFor='author'>Author</label>

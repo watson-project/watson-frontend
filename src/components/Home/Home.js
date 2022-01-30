@@ -38,7 +38,6 @@ function Home(props) {
   if (loading && !stories.length) {
     return <h2>Loading...</h2>;
   }
-
   return (
     <div className={styles.homeContainer}>
       <div className={styles.heroContainer}>
@@ -51,7 +50,7 @@ function Home(props) {
             View Articles
           </Link>
         ) : (
-          <Link to='/loginpage' className={styles.viewBtn}>
+          <Link to='/login' className={styles.loginBtn}>
             Login
           </Link>
         )}

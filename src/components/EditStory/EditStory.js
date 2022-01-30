@@ -1,12 +1,15 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import styles from './EditStory.module.css';
 import { useEffect } from 'react';
+import { UserContext } from '../../context/UserContext';
 
 function EditStory(props) {
+  const [userContext, setUserContext] = useContext(UserContext);
+  console.log(userContext);
   const { id } = useParams();
   const navigate = useNavigate();
   const [story, setStory] = useState({
@@ -24,6 +27,7 @@ function EditStory(props) {
         setStory(res.data);
       });
   }, [id]);
+
   // use axios to PUT new data in edit page
   const editArticle = () => {
     axios
@@ -33,6 +37,7 @@ function EditStory(props) {
         navigate(`/stories/${id}`);
       });
   };
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     editArticle();
