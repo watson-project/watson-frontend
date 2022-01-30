@@ -14,27 +14,29 @@ function AddStory(props) {
     author: '',
     photo_url: '',
     content: '',
-    // owner: userContext,
   });
 
   const createNewStory = () => {
-    axios
-      .post(`http://localhost:4000/api/articles`, story)
-      .then((res) => {
-        console.log(res);
-        navigate('/stories');
-      });
-    // fetch(`http://localhost:4000/api/articles`, {
-    //   method: 'POST',
-    //   body: JSON.stringify(story),
-    //   headers: { 'Content-Type': 'application/json' },
-    // })
+    // axios
+    //   .post(`http://localhost:4000/api/articles`, story)
     //   .then((res) => {
-    //     return res.json();
-    //   })
-    //   .then((res) => {
+    //     console.log(res);
     //     navigate('/stories');
     //   });
+    fetch(`https://watson-project.herokuapp.com/api/articles`, {
+      method: 'POST',
+      body: JSON.stringify(story),
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${userContext.token}`,
+      },
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((res) => {
+        navigate('/stories');
+      });
   };
 
   const handleSubmit = (e) => {
