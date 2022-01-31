@@ -9,7 +9,6 @@ import { UserContext } from '../../context/UserContext';
 
 function Navigation(props) {
   const [userContext, setUserContext] = useContext(UserContext);
-
   // Open/close menu
   const [menu, setMenu] = useState(false);
   // grab the location of url to use on state change
