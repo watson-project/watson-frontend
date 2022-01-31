@@ -1,40 +1,40 @@
-import React, { useState, useContext } from 'react';
+// dependencies
+import React, { useState, useContext, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+// stylesheet
 import styles from './Login.module.css';
+// axios
 import axios from 'axios';
+// context
 import { UserContext } from '../../context/UserContext';
-import { useRef } from 'react';
+// images/components
 import { AiFillEye } from 'react-icons/ai';
 
 function Login(props) {
-  const togglePass = useRef(null);
+  const [userContext, setUserContext] = useContext(UserContext);
   const [showPass, setShowPass] = useState(false);
+  const [errMsg, setErrMsg] = useState(null);
+  const togglePass = useRef(null);
+  const navigate = useNavigate();
+
   const [user, setUser] = useState({
     email: '',
     password: '',
     loggedIn: true,
   });
-  const [userContext, setUserContext] = useContext(UserContext);
-  const [errMsg, setErrMsg] = useState(null);
-  const navigate = useNavigate();
 
   const handleLogIn = () => {
     axios
       .post(`https://watson-project.herokuapp.com/api/signin`, user)
       .then((res) => {
-        console.log(res);
         if (res.data === 'The provided username or password is incorrect') {
           setErrMsg(res.data);
         }
         if (res.data !== 'The provided username or password is incorrect') {
-          console.log(res);
           setUserContext((user) => {
             navigate('/');
-            console.log(res);
             return { ...user, token: res.data.token };
           });
-          // setUserContext({...user, token: res.data.token });
-          // navigate('/');
         }
       });
   };
@@ -67,7 +67,7 @@ function Login(props) {
           <label htmlFor='email'>Email:</label>
           <input
             id='email'
-            type='text'
+            type='email'
             value={user.email}
             placeholder='email'
             onChange={handleChange}

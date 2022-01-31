@@ -1,10 +1,13 @@
+// dependencies
 import React, { useEffect, useState, useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+// stylesheet
 import styles from './Navigation.module.css';
 // logo
 import logo from '../../assets/logo-small.png';
-// hamburger icon
+// images/components
 import { FiMenu } from 'react-icons/fi';
+// context
 import { UserContext } from '../../context/UserContext';
 
 function Navigation(props) {
@@ -18,6 +21,7 @@ function Navigation(props) {
   const toggleMenu = () => {
     setMenu(!menu);
   };
+
   // Set menu to false when URL location changes
   useEffect(() => {
     setMenu(false);
@@ -32,9 +36,6 @@ function Navigation(props) {
         {/* If menu is open, show links */}
         {menu ? (
           <div className={styles.links}>
-            {/* <Link to='/' className={styles.addLink}>
-              Home
-            </Link> */}
             {userContext.token ? (
               <Link to='/stories' className={styles.addLink}>
                 Dashboard
@@ -45,13 +46,13 @@ function Navigation(props) {
             <Link to='/about' className={styles.addLink}>
               About
             </Link>
-            {/* {userContext.token ? (
+            {userContext.token ? (
               <Link to='/add-story' className={styles.addLink}>
                 Add Story
               </Link>
             ) : (
               ''
-            )} */}
+            )}
           </div>
         ) : (
           ''

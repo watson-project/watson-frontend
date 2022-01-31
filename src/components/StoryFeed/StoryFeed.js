@@ -1,16 +1,13 @@
+// dependencies
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
-import axios from 'axios';
-// components
-import StoryCard from '../StoryCard/StoryCard';
 // stylesheet
 import styles from './StoryFeed.module.css';
-import vector from '../../assets/Vector.png';
+// images/components
+import StoryCard from '../StoryCard/StoryCard';
 import { AiOutlinePlus } from 'react-icons/ai';
 
 function StoryFeed(props) {
-  // const { id } = useParams();
   const [stories, setStories] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -37,20 +34,15 @@ function StoryFeed(props) {
   useEffect(() => {
     fetchArticles();
   }, []);
+
   if (loading && !stories.length) {
     return <h2>Loading...</h2>;
   }
-  // if (!loading && !stories.length) {
-  //   return <h2>Something went wrong</h2>;
-  // }
 
   return (
     <div className={styles.feedContainer}>
-      {/* <img src={vector} alt='background' className={styles.vector} /> */}
-      {/* <div className={styles.vector}></div> */}
       <div className={styles.headerText}>
-        <h4>Articles</h4>
-        <input type='text' />
+        <h1>Articles</h1>
         <Link to='/add-story'>
           <AiOutlinePlus />
         </Link>
