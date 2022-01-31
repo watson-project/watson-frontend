@@ -14,6 +14,7 @@ import { UserContext } from '../../context/UserContext';
 function Story(props) {
   const [userContext, setUserContext] = useContext(UserContext);
   const [errMsg, setErrMsg] = useState(null);
+  const [noStoryFound, setNoStoryFound] = useState(null);
   const [modal, setModal] = useState(false);
   const [story, setStory] = useState(null);
   const navigate = useNavigate();
@@ -27,7 +28,7 @@ function Story(props) {
       const data = await res.json();
       setStory(data);
     } catch (error) {
-      console.log(error);
+      setNoStoryFound('Something went wrong, try again later');
     }
   }
   // Load story on mount
@@ -64,6 +65,10 @@ function Story(props) {
     setModal(false);
     setErrMsg(null);
   };
+
+  if (!story) {
+    <p>{noStoryFound}</p>;
+  }
 
   return (
     <>
