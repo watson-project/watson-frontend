@@ -4,6 +4,8 @@ The Watson is an open source, blog style website with support for text and image
 
 > The Watson - Share the Future
 
+https://the-watson.netlify.app/
+
   ### Scrum manager/project manager
   > David Gales
 
