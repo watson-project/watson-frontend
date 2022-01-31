@@ -13,6 +13,8 @@ import Story from './components/Story/Story';
 import About from './components/About/About';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
+import Search from './components/Search/Search';
+import SearchResults from './components/SearchResults/SearchResults';
 
 function App() {
   return (
