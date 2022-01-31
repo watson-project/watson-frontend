@@ -122,17 +122,17 @@
   color: white;
 }
 .form .registerBtn {
-    color: rgb(115, 168, 218);
-    font-family: 'Poppins', cursive;
-    /* padding-bottom: 2%; */
-    display: flex;
-    justify-content: center;
-    /* margin-bottom: 5px; */
-    text-decoration: none;
+  color: rgb(115, 168, 218);
+  font-family: 'Poppins', cursive;
+  /* padding-bottom: 2%; */
+  display: flex;
+  justify-content: center;
+  /* margin-bottom: 5px; */
+  text-decoration: none;
 }
 
 .registerText {
-  color: #2D6CF1;
+  color: #2d6cf1;
   /* border: 2px solid red;  */
   max-width: fit-content;
   display: flex;
@@ -146,6 +146,27 @@
 
 .registerText a:hover {
   color: rgba(0, 0, 0, 0.07);
+}
+/* Error Message */
+.errMsg {
+  /* border: 1px solid red; */
+  text-align: center;
+  margin-bottom: 1rem;
+  font-family: 'Poppins', sans-serif;
+  color: rgb(247, 48, 48);
+}
+
+/* Password Div */
+.passwordDiv {
+  display: flex;
+  align-items: center;
+}
+.passwordDiv .toggleEye {
+  padding: 0;
+  margin: 0;
+  height: 50px;
+  width: 50px;
+  margin-bottom: 1.8rem;
 }
 
 @media (max-width: 600px) {
