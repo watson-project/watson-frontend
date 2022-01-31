@@ -54,14 +54,15 @@
 }
 /* Hamburger */
 .navBtn {
-	cursor: pointer;
-	font-size: 40px;
-	padding: 10px;
-	border-radius: 5px;
-	transition: all 0.3s ease;
-	background-color: transparent;
-	box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px 0px;
-	color: black;
+  cursor: pointer;
+  font-size: 40px;
+  padding: 10px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  background-color: transparent;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px 0px;
+  color: black;
+  margin-left: 1rem;
 }
 .navBtn:hover {
 	color: white;
@@ -88,6 +89,7 @@ button:hover {
 	background-color: #e6e6e6;
 }
 
+/* Media Queries */
 @media (max-width: 600px) {
 	.links a {
 		padding: 0.2rem;

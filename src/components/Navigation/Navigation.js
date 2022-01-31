@@ -1,10 +1,13 @@
+// dependencies
 import React, { useEffect, useState, useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+// stylesheet
 import styles from './Navigation.module.css';
 // logo
 import logo from '../../assets/logo-small.png';
-// hamburger icon
+// images/components
 import { FiMenu } from 'react-icons/fi';
+// context
 import { UserContext } from '../../context/UserContext';
 
 function Navigation(props) {
@@ -18,6 +21,7 @@ function Navigation(props) {
   const toggleMenu = () => {
     setMenu(!menu);
   };
+
   // Set menu to false when URL location changes
   useEffect(() => {
     setMenu(false);

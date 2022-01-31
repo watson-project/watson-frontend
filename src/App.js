@@ -1,5 +1,3 @@
-// stylesheets
-import './App.css';
 // dependencies
 import { Routes, Route } from 'react-router-dom';
 import { UserProvider } from './context/UserContext';
@@ -19,22 +17,22 @@ import Search from './components/Search/Search';
 import SearchResults from './components/SearchResults/SearchResults';
 
 function App() {
-	return (
-		<UserProvider>
-			<Navigation />
-			<Routes>
-				<Route index path='/' element={<Home />} />
-				<Route path='/login' element={<Login />} />
-				<Route path='/register' element={<Register />} />
-				<Route path='/stories' element={<StoryFeed />} />
-				<Route path='/add-story' element={<AddStory />} />
-				<Route path='/about' element={<About />} />
-				<Route path='/stories/:id' element={<Story />} />
-				<Route path='/edit/:id' element={<EditStory />} />
-			</Routes>
-			<Footer />
-		</UserProvider>
-	);
+  return (
+    <UserProvider>
+        <Navigation />
+        <Routes>
+          <Route index path='/' element={<Home />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register />} />
+          <Route path='/stories' element={<StoryFeed />} />
+          <Route path='/add-story' element={<AddStory />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/stories/:id' element={<Story />} />
+          <Route path='/edit/:id' element={<EditStory />} />
+        </Routes>
+        <Footer />
+    </UserProvider>
+  );
 }
 
 export default App;

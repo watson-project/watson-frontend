@@ -14,7 +14,7 @@
   max-width: 1500px;
   align-items: center;
 }
-.headerText h4 {
+.headerText h1 {
   font-family: 'Poppins', sans-serif;
   color: #3f6be8;
   font-size: 36px;
@@ -40,7 +40,7 @@
   color: black;
   text-decoration: none;
 }
-
+/* Media Queries */
 @media (min-width: 1000px) {
   .feedContainer ul {
     display: grid;

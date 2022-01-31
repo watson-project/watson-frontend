@@ -9,11 +9,10 @@
 }
 /* Background Container */
 .bgContainer {
-  height: 50vh;
+  height: 100vh;
   width: 100vw;
   clip-path: circle(100% at 50% 0);
   background: linear-gradient(180deg, rgba(47, 109, 241, 100%), #265ad7);
-  height: 60vh;
   background-size: cover;
   background-repeat: no-repeat;
   position: absolute;
@@ -116,16 +115,17 @@
 /* Button Active State */
 .form button:active {
   background-color: #265ed6;
+  border-color: #265ed6;
   font-family: 'Bebas Neue', cursive;
   color: white;
 }
-
+/* Media Queries */
 @media (max-width: 600px) {
   .form {
     padding: 0 1rem;
   }
 }
-
+/* Animations */
 @keyframes fade {
   0% {
     opacity: 0;
