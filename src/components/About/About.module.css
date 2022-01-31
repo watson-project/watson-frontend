@@ -82,6 +82,11 @@
 	color: #64a0e4;
 }
 
+.linkedin {
+	height: 15px;
+	align-items: center;
+}
+
 @keyframes fadeInUp {
 	0% {
 		opacity: 0;

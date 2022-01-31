@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './About.module.css';
+import linkedin from '../../assets/linkedin-logo.png'
 
 function About(props) {
 	return (
@@ -32,28 +33,28 @@ function About(props) {
 							href='https://www.linkedin.com/in/landon-spell/'
 							rel='noopener noreferrer'
 							target='_blank'>
-							Landon Spell
+							Landon Spell <img className={styles.linkedin} src={linkedin} alt='linkedin logo' />
 						</a>
 						,{' '}
 						<a
 							href='https://www.linkedin.com/in/stuntmccartney/'
 							rel='noopener noreferrer'
 							target='_blank'>
-							David Gales
+							David Gales <img className={styles.linkedin} src={linkedin} alt='linkedin logo' />
 						</a>
 						,{' '}
 						<a
 							href='https://www.linkedin.com/in/michelapathinvo/'
 							rel='noopener noreferrer'
 							target='_blank'>
-							Michel Pathinvo
+							Michel Pathinvo <img className={styles.linkedin} src={linkedin} alt='linkedin logo' />
 						</a>{' '}
 						&{' '}
 						<a
 							href='https://www.linkedin.com/in/joesphchang/'
 							rel='noopener noreferrer'
 							target='_blank'>
-							Joey Chang
+							Joey Chang <img className={styles.linkedin} src={linkedin} alt='linkedin logo' />
 						</a>
 					</div>
 				</div>
