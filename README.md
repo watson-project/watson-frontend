@@ -2,6 +2,7 @@
 # The Watson 
 
 The Watson is an open sourced, blog style website with support for text and images. Free from intrusive advertisements and clunky UI's, The Watson is the place where you can shout to the masses and be heard. Keeping the mentality of freely editable: every article is able to be viewed, edited, and deleted by all logged in users. 
+
 >The Watson.
 >Share the Future.
 
