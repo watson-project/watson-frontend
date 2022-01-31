@@ -2,10 +2,8 @@
   height: 100%;
 }
 .heroContainer {
-  /* background-image: url(../../assets/hero-bg.jpg); */
   clip-path: circle(95% at 50% 0);
-  /* background: linear-gradient(180deg, #4477eb, #2050c3); */
-  background: linear-gradient(180deg, rgba( 47, 109, 241, 100%), #265AD7);
+  background: linear-gradient(180deg, rgba(47, 109, 241, 100%), #265ad7);
   height: 50vh;
   background-size: cover;
   background-repeat: no-repeat;
@@ -17,7 +15,6 @@
 .heroContainer img {
   width: 150px;
   transition: all 0.3s ease;
-  /* margin-top: -4rem; */
 }
 .heroContainer .viewBtn {
   background-color: white;
@@ -42,6 +39,35 @@
   box-shadow: none;
 }
 .heroContainer .viewBtn:hover {
+  background-color: white;
+  color: #2e6cf1;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+/* Login Button */
+.heroContainer .loginBtn {
+  background-color: transparent;
+  height: 40px;
+  width: 150px;
+  border: 1px solid white;
+  border-radius: 10px;
+  color: white;
+  font-family: 'Bebas Neue', cursive;
+  font-weight: 200;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  margin-top: 1rem;
+  opacity: 0;
+  animation: simpleFade 1s ease forwards;
+  animation-delay: 2s;
+  transition: all 0.2s ease;
+  box-shadow: none;
+}
+.heroContainer .loginBtn:hover {
   background-color: white;
   color: #2e6cf1;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
@@ -95,6 +121,7 @@
   max-width: 500px;
   margin: 0 auto;
 }
+/* Media Query */
 @media (min-width: 600px) {
   .heroContainer .firstP {
     margin-top: 0;
@@ -123,7 +150,7 @@
     margin: 0 auto;
   }
 }
-
+/* Animations */
 @keyframes fadeInUp {
   0% {
     opacity: 0;

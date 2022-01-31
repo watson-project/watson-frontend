@@ -1,11 +1,17 @@
-import React from 'react';
-import { useState } from 'react';
-import axios from 'axios';
+// dependencies
+import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+// context
+import { UserContext } from '../../context/UserContext';
+// stylesheet
 import styles from './AddStory.module.css';
 
 function AddStory(props) {
+  // bring in the UserContext
+  const [userContext, setUserContext] = useContext(UserContext);
   const navigate = useNavigate();
+
+  // create a story model to be submitted
   const [story, setStory] = useState({
     title: '',
     author: '',
@@ -13,18 +19,29 @@ function AddStory(props) {
     content: '',
   });
 
+  // create a function that posts a new article
   const createNewStory = () => {
-    axios
-      .post(`https://watson-project.herokuapp.com/api/articles`, story)
+    fetch(`https://watson-project.herokuapp.com/api/articles`, {
+      method: 'POST',
+      body: JSON.stringify(story),
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${userContext.token}`,
+      },
+    })
       .then((res) => {
-        console.log(res.data);
+        return res.json();
+      })
+      .then((res) => {
         navigate('/stories');
       });
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     createNewStory();
   };
+
   const handleChange = (e) => {
     setStory({ ...story, [e.target.id]: e.target.value });
   };
@@ -32,7 +49,7 @@ function AddStory(props) {
   return (
     <div className={styles.addContainer}>
       <div className={styles.bgContainer}></div>
-        <h3>Add A New Article</h3>
+      <h3>Add A New Article</h3>
       <div className={styles.textContainer}>
         <form onSubmit={handleSubmit} className={styles.form}>
           <label htmlFor='author'>Author</label>
@@ -71,7 +88,7 @@ function AddStory(props) {
             cols='50'
           />
           <button type='submit' className={styles.addBtn}>
-            Add Post
+            Add Article
           </button>
         </form>
       </div>

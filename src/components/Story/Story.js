@@ -1,51 +1,75 @@
-import React, { useState, useEffect } from 'react';
-import { Navigate, useNavigate, useParams } from 'react-router-dom';
-import styles from './Story.module.css';
-import notFound from '../../assets/not-found.jpg';
+// dependencies
+import React, { useState, useEffect, useContext } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import moment from 'moment';
+// stylesheet
+import styles from './Story.module.css';
+// images/components
+import notFound from '../../assets/not-found.jpg';
+// axios
 import axios from 'axios';
+// context
+import { UserContext } from '../../context/UserContext';
 
 function Story(props) {
-  const { id } = useParams();
-  const navigate = useNavigate();
+  const [userContext, setUserContext] = useContext(UserContext);
+  const [errMsg, setErrMsg] = useState(null);
+  const [noStoryFound, setNoStoryFound] = useState(null);
   const [modal, setModal] = useState(false);
-
   const [story, setStory] = useState(null);
+  const navigate = useNavigate();
+  const { id } = useParams();
+
   async function getStory() {
     try {
       const res = await fetch(
         `https://watson-project.herokuapp.com/api/articles/${id}`
       );
       const data = await res.json();
-      console.log(data);
       setStory(data);
     } catch (error) {
-      console.log(error);
+      setNoStoryFound('Something went wrong, try again later');
     }
   }
-
+  // Load story on mount
   useEffect(() => {
     getStory();
     return setStory(null);
   }, []);
 
+  // Delete article
   const handleDelete = () => {
     axios
-      .delete(`https://watson-project.herokuapp.com/api/articles/${id}`)
+      .delete(`https://watson-project.herokuapp.com/api/articles/${id}`, {
+        headers: {
+          Authorization: `Bearer ${userContext.token}`,
+        },
+      })
       .then((res) => {
         navigate('/stories');
+      })
+      .catch((error) => {
+        setErrMsg(error);
       });
   };
+  // Navigate to edit article page
   function navigateEdit() {
     navigate(`/edit/${id}`);
   }
-
+  // Show Modal
   const editShowPage = () => {
     setModal(true);
   };
+  // Close Modal
   const closeModal = () => {
     setModal(false);
+    setErrMsg(null);
   };
+
+  if (!story) {
+    <p>{noStoryFound}</p>;
+  }
+
   return (
     <>
       {modal ? (
@@ -53,7 +77,11 @@ function Story(props) {
           <div className={styles.bgContainer}></div>
 
           <div className={styles.modalText}>
-            <h2>Are you sure you want to delete this article?</h2>
+            {!errMsg ? (
+              <h2>Are you sure you want to delete this article?</h2>
+            ) : (
+              <h2>You are not authorized to delete this article!</h2>
+            )}
             <button className={styles.deleteBtn} onClick={handleDelete}>
               Delete
             </button>

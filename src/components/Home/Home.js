@@ -1,10 +1,16 @@
-import React, { useEffect, useState } from 'react';
+// dependencies
+import React, { useEffect, useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
+// stylesheet
 import styles from './Home.module.css';
+// images/components
 import logo_hero from '../../assets/logo-hero.png';
 import StoryCard from '../StoryCard/StoryCard';
+// context
+import { UserContext } from '../../context/UserContext';
 
 function Home(props) {
+  const [userContext, setUserContext] = useContext(UserContext);
   const [stories, setStories] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -38,15 +44,20 @@ function Home(props) {
   return (
     <div className={styles.homeContainer}>
       <div className={styles.heroContainer}>
-        <p className={styles.firstP}>
-          Ideas worth sharing.
-        </p>
+        <p className={styles.firstP}>Ideas worth sharing.</p>
         <p className={styles.secondP}>Share yours.</p>
         <p className={styles.thirdP}>Share the future.</p>
         <img src={logo_hero} alt='hero logo' />
-        <Link to='/loginpage' className={styles.viewBtn}>
-          Login
-        </Link>
+        {/* If there is a user token, show View Articles, if not, show Login */}
+        {userContext.token ? (
+          <Link to='/stories' className={styles.viewBtn}>
+            View Articles
+          </Link>
+        ) : (
+          <Link to='/login' className={styles.loginBtn}>
+            Login
+          </Link>
+        )}
       </div>
       <div className={styles.storiesContainer}>
         <h3>Latest Stories</h3>
