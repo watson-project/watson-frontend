@@ -15,26 +15,26 @@ import Story from './components/Story/Story';
 import About from './components/About/About';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
+import Search from './components/Search/Search';
+import SearchResults from './components/SearchResults/SearchResults';
 
 function App() {
-  return (
-    <UserProvider>
-      
-        <Navigation />
-        <Routes>
-          <Route index path='/' element={<Home />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/register' element={<Register />} />
-          <Route path='/stories' element={<StoryFeed />} />
-          <Route path='/add-story' element={<AddStory />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/stories/:id' element={<Story />} />
-          <Route path='/edit/:id' element={<EditStory />} />
-        </Routes>
-        <Footer />
-      
-    </UserProvider>
-  );
+	return (
+		<UserProvider>
+			<Navigation />
+			<Routes>
+				<Route index path='/' element={<Home />} />
+				<Route path='/login' element={<Login />} />
+				<Route path='/register' element={<Register />} />
+				<Route path='/stories' element={<StoryFeed />} />
+				<Route path='/add-story' element={<AddStory />} />
+				<Route path='/about' element={<About />} />
+				<Route path='/stories/:id' element={<Story />} />
+				<Route path='/edit/:id' element={<EditStory />} />
+			</Routes>
+			<Footer />
+		</UserProvider>
+	);
 }
 
 export default App;

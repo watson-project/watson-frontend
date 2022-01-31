@@ -50,7 +50,6 @@ function StoryFeed(props) {
       {/* <div className={styles.vector}></div> */}
       <div className={styles.headerText}>
         <h4>Articles</h4>
-        <input type='text' />
         <Link to='/add-story'>
           <AiOutlinePlus />
         </Link>
