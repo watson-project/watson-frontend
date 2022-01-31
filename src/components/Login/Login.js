@@ -1,22 +1,27 @@
-import React, { useState, useContext } from 'react';
+// dependencies
+import React, { useState, useContext, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+// stylesheet
 import styles from './Login.module.css';
+// axios
 import axios from 'axios';
+// context
 import { UserContext } from '../../context/UserContext';
-import { useRef } from 'react';
+// images/components
 import { AiFillEye } from 'react-icons/ai';
 
 function Login(props) {
-  const togglePass = useRef(null);
+  const [userContext, setUserContext] = useContext(UserContext);
   const [showPass, setShowPass] = useState(false);
+  const [errMsg, setErrMsg] = useState(null);
+  const togglePass = useRef(null);
+  const navigate = useNavigate();
+
   const [user, setUser] = useState({
     email: '',
     password: '',
     loggedIn: true,
   });
-  const [userContext, setUserContext] = useContext(UserContext);
-  const [errMsg, setErrMsg] = useState(null);
-  const navigate = useNavigate();
 
   const handleLogIn = () => {
     axios

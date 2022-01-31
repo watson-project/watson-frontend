@@ -1,5 +1,3 @@
-// stylesheets
-import './App.css';
 // dependencies
 import { Routes, Route } from 'react-router-dom';
 import { UserProvider } from './context/UserContext';
@@ -19,7 +17,6 @@ import Register from './components/Register/Register';
 function App() {
   return (
     <UserProvider>
-      
         <Navigation />
         <Routes>
           <Route index path='/' element={<Home />} />
@@ -32,7 +29,6 @@ function App() {
           <Route path='/edit/:id' element={<EditStory />} />
         </Routes>
         <Footer />
-      
     </UserProvider>
   );
 }

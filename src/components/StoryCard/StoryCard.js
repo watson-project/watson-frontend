@@ -1,10 +1,12 @@
+// dependencies
 import React from 'react';
-import styles from './StoryCard.module.css';
-import notFound from '../../assets/not-found.jpg';
 import moment from 'moment';
+// stylesheet
+import styles from './StoryCard.module.css';
+// images/components
+import notFound from '../../assets/not-found.jpg';
 
 function StoryCard({ story }) {
-  // console.log(story.photo_url);
   return (
     <div className={styles.cardContainer}>
       <div className={styles.textContainer}>

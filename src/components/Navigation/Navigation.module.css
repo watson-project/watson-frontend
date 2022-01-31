@@ -71,6 +71,7 @@
 .navBtn:active {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px 0px inset;
 }
+/* Media Queries */
 @media (max-width: 600px) {
   .links a {
     padding: 0.2rem;

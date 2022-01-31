@@ -40,7 +40,7 @@
   color: black;
   text-decoration: none;
 }
-
+/* Media Queries */
 @media (min-width: 1000px) {
   .feedContainer ul {
     display: grid;

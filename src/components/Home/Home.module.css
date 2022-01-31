@@ -15,7 +15,6 @@
 .heroContainer img {
   width: 150px;
   transition: all 0.3s ease;
-  /* margin-top: -4rem; */
 }
 .heroContainer .viewBtn {
   background-color: white;
@@ -122,6 +121,7 @@
   max-width: 500px;
   margin: 0 auto;
 }
+/* Media Query */
 @media (min-width: 600px) {
   .heroContainer .firstP {
     margin-top: 0;
@@ -150,7 +150,7 @@
     margin: 0 auto;
   }
 }
-
+/* Animations */
 @keyframes fadeInUp {
   0% {
     opacity: 0;

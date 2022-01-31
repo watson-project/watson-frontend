@@ -35,7 +35,7 @@
   max-width: 600px;
   height: 25rem;
 }
-/* "Add A New Article" Text */
+/* "Register Account" Text */
 .addContainer h3 {
   font-family: 'Poppins', sans-serif;
   font-size: 24px;
@@ -91,7 +91,7 @@
   max-height: 300px;
   font-family: 'Karla', sans-serif;
 }
-/* "Add Post" Button */
+/* "Register" Button */
 .form button {
   color: #2e6cf1;
   height: 40px;
@@ -120,14 +120,14 @@
   color: white;
 }
 .form .registerBtn {
-    color: rgb(115, 168, 218);
-    font-family: 'Poppins', cursive;
-    display: flex;
-    justify-content: center;
-    text-decoration: none;
+  color: rgb(115, 168, 218);
+  font-family: 'Poppins', cursive;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
 }
 .registerText {
-  color: #2D6CF1;
+  color: #2d6cf1;
   max-width: fit-content;
   display: flex;
   justify-content: space-around;
@@ -152,11 +152,13 @@
   width: 50px;
   margin-bottom: 1.8rem;
 }
+/* Media Queries */
 @media (max-width: 600px) {
   .form {
     padding: 0 1rem;
   }
 }
+/* Animations */
 @keyframes fade {
   0% {
     opacity: 0;

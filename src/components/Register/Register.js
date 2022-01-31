@@ -1,19 +1,21 @@
-import React, { useState } from 'react';
+// dependencies
+import React, { useState, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+// stylesheet
 import styles from './Register.module.css';
+// axios
 import axios from 'axios';
-import { useRef } from 'react';
+// images/components
 import { AiFillEye } from 'react-icons/ai';
 
-
 function Register(props) {
-    const togglePass = useRef(null);
-    const [showPass, setShowPass] = useState(false);
+  const togglePass = useRef(null);
+  const [showPass, setShowPass] = useState(false);
+  const navigate = useNavigate();
   const [registered, setRegistered] = useState({
     email: '',
     password: '',
   });
-  const navigate = useNavigate();
 
   const handleRegistered = () => {
     axios
@@ -32,15 +34,15 @@ function Register(props) {
     setRegistered({ ...registered, [event.target.id]: event.target.value });
   };
 
-    const showPassword = () => {
-      if (showPass) {
-        togglePass.current.attributes['1'].value = 'text';
-      }
-      if (!showPass) {
-        togglePass.current.attributes['1'].value = 'password';
-      }
-      setShowPass(!showPass);
-    };
+  const showPassword = () => {
+    if (showPass) {
+      togglePass.current.attributes['1'].value = 'text';
+    }
+    if (!showPass) {
+      togglePass.current.attributes['1'].value = 'password';
+    }
+    setShowPass(!showPass);
+  };
 
   return (
     <div>

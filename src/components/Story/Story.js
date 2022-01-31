@@ -1,19 +1,24 @@
+// dependencies
 import React, { useState, useEffect, useContext } from 'react';
-import { Navigate, useNavigate, useParams } from 'react-router-dom';
-import styles from './Story.module.css';
-import notFound from '../../assets/not-found.jpg';
+import { useNavigate, useParams } from 'react-router-dom';
 import moment from 'moment';
+// stylesheet
+import styles from './Story.module.css';
+// images/components
+import notFound from '../../assets/not-found.jpg';
+// axios
 import axios from 'axios';
+// context
 import { UserContext } from '../../context/UserContext';
 
 function Story(props) {
-  const { id } = useParams();
-  const navigate = useNavigate();
-  const [modal, setModal] = useState(false);
   const [userContext, setUserContext] = useContext(UserContext);
   const [errMsg, setErrMsg] = useState(null);
-
+  const [modal, setModal] = useState(false);
   const [story, setStory] = useState(null);
+  const navigate = useNavigate();
+  const { id } = useParams();
+
   async function getStory() {
     try {
       const res = await fetch(
@@ -25,12 +30,13 @@ function Story(props) {
       console.log(error);
     }
   }
-
+  // Load story on mount
   useEffect(() => {
     getStory();
     return setStory(null);
   }, []);
 
+  // Delete article
   const handleDelete = () => {
     axios
       .delete(`https://watson-project.herokuapp.com/api/articles/${id}`, {
@@ -45,17 +51,20 @@ function Story(props) {
         setErrMsg(error);
       });
   };
+  // Navigate to edit article page
   function navigateEdit() {
     navigate(`/edit/${id}`);
   }
-
+  // Show Modal
   const editShowPage = () => {
     setModal(true);
   };
+  // Close Modal
   const closeModal = () => {
     setModal(false);
     setErrMsg(null);
   };
+
   return (
     <>
       {modal ? (

@@ -159,11 +159,13 @@
   width: 50px;
   margin-bottom: 1.8rem;
 }
+/* Media Queries */
 @media (max-width: 600px) {
   .form {
     padding: 0 1rem;
   }
 }
+/* Animations */
 @keyframes fade {
   0% {
     opacity: 0;
