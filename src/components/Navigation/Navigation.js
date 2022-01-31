@@ -27,40 +27,55 @@ function Navigation(props) {
     setMenu(false);
   }, [location]);
 
+  function refreshPage() {
+    window.location.reload(false);
+  }
+
   return (
-    <div className={styles.navContainer}>
-      <div className={styles.linkContainer}>
-        <Link to='/' className={styles.heroimg}>
-          <img src={logo} alt='company logo' />
-        </Link>
-        {/* If menu is open, show links */}
-        {menu ? (
-          <div className={styles.links}>
-            {userContext.token ? (
-              <Link to='/stories' className={styles.addLink}>
-                Dashboard
-              </Link>
-            ) : (
-              ''
-            )}
+		<div className={styles.navContainer}>
+			<div className={styles.linkContainer}>
+				<Link to='/' className={styles.heroimg}>
+					<img src={logo} alt='company logo' />
+				</Link>
+				{/* If menu is open, show links */}
+				{menu ? (
+					<div className={styles.links}>
+						
+						{/* <Link to='/' className={styles.addLink}>
+              Home
+            </Link> */}
+						{userContext.token ? (
+							<Link to='/stories' className={styles.addLink}>
+								Dashboard
+							</Link>
+						) : (
+							''
+						)}						
             <Link to='/about' className={styles.addLink}>
-              About
-            </Link>
-            {userContext.token ? (
+							About
+						</Link>
+						{userContext.token ? (
+              <button onClick={refreshPage} classNAme={styles.logoutBtn}>Logout</button>
+						) : (
+							''
+						)}
+
+						{/* {userContext.token ? (
               <Link to='/add-story' className={styles.addLink}>
                 Add Story
               </Link>
             ) : (
               ''
-            )}
-          </div>
-        ) : (
-          ''
-        )}
-        <FiMenu onClick={toggleMenu} className={styles.navBtn} />
-      </div>
-    </div>
-  );
+            )} */}
+						{/* <Link to='/search' className={styles.addLink}>Search</Link> */}
+					</div>
+				) : (
+					''
+				)}
+				<FiMenu onClick={toggleMenu} className={styles.navBtn} />
+			</div>
+		</div>
+	);
 }
 
 export default Navigation;

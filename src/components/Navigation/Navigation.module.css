@@ -1,56 +1,56 @@
 /* Nav Container */
 .navContainer {
-  height: 50px;
-  width: 100%;
-  background-color: #ffffff;
-  font-family: 'Karla', sans-serif;
+	height: 50px;
+	width: 100%;
+	background-color: #ffffff;
+	font-family: 'Karla', sans-serif;
 }
 /* Link Container */
 .linkContainer {
-  background-color: #ffffff;
-  height: 50px;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 1rem;
-  margin: 0 auto;
+	background-color: #ffffff;
+	height: 50px;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 1rem;
+	margin: 0 auto;
 }
 /* Logo */
 .linkContainer img {
-  height: 30px;
-  margin-top: 5px;
+	height: 30px;
+	margin-top: 5px;
 }
 /* <Link/> */
 .linkContainer a {
-  text-decoration: none;
-  color: black;
+	text-decoration: none;
+	color: black;
 }
 /* Links Div */
 .links {
-  width: 100%;
-  max-width: fit-content;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-left: auto;
+	width: 100%;
+	max-width: fit-content;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: baseline;
+	margin-left: auto;
 }
 .links a {
-  padding: 0.5rem;
-  border-radius: 5px;
-  background-color: transparent;
-  transition: all 0.2s ease;
-  margin: 0 0.5rem;
+	padding: 0.5rem;
+	border-radius: 5px;
+	background-color: transparent;
+	transition: all 0.2s ease;
+	margin: 0 0.5rem;
 }
 .links a:hover {
-  text-decoration: none;
-  color: black;
-  background-color: #e6e6e6;
+	text-decoration: none;
+	color: black;
+	background-color: #e6e6e6;
 }
 /* Page Links */
 .linkContainer .addLink {
-  font-size: 14px;
+	font-size: 14px;
 }
 /* Hamburger */
 .navBtn {
@@ -65,17 +65,35 @@
   margin-left: 1rem;
 }
 .navBtn:hover {
-  color: white;
-  background-color: #2e6cf1;
+	color: white;
+	background-color: #2e6cf1;
 }
 .navBtn:active {
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px 0px inset;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px 0px inset;
 }
+
+/* Logout Button */
+button {
+	background-color: white;
+  border: none;
+  border-radius: 5px;
+	color: black;
+	cursor: pointer;
+	padding: 5px;
+  margin-right: 10px;
+}
+
+button:hover {
+	text-decoration: none;
+	color: black;
+	background-color: #e6e6e6;
+}
+
 /* Media Queries */
 @media (max-width: 600px) {
-  .links a {
-    padding: 0.2rem;
-    margin: 0;
-    margin-left: 0.1rem;
-  }
+	.links a {
+		padding: 0.2rem;
+		margin: 0;
+		margin-left: 0.1rem;
+	}
 }
