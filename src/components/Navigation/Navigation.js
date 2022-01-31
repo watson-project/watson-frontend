@@ -45,13 +45,13 @@ function Navigation(props) {
             <Link to='/about' className={styles.addLink}>
               About
             </Link>
-            {/* {userContext.token ? (
+            {userContext.token ? (
               <Link to='/add-story' className={styles.addLink}>
                 Add Story
               </Link>
             ) : (
               ''
-            )} */}
+            )}
           </div>
         ) : (
           ''

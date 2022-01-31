@@ -1,14 +1,17 @@
-import React from 'react';
-import { useState, useContext } from 'react';
-import axios from 'axios';
+// dependencies
+import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import styles from './AddStory.module.css';
+// context
 import { UserContext } from '../../context/UserContext';
+// stylesheet
+import styles from './AddStory.module.css';
 
 function AddStory(props) {
+  // bring in the UserContext
   const [userContext, setUserContext] = useContext(UserContext);
-
   const navigate = useNavigate();
+
+  // create a story model to be submitted
   const [story, setStory] = useState({
     title: '',
     author: '',
@@ -16,6 +19,7 @@ function AddStory(props) {
     content: '',
   });
 
+  // create a function that posts a new article
   const createNewStory = () => {
     fetch(`https://watson-project.herokuapp.com/api/articles`, {
       method: 'POST',

@@ -1,23 +1,28 @@
-import React from 'react';
-import { useState, useContext } from 'react';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
+// dependencies
+import React, { useEffect, useState, useContext } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+// stylesheet
 import styles from './EditStory.module.css';
-import { useEffect } from 'react';
+// axios
+import axios from 'axios';
+// context
 import { UserContext } from '../../context/UserContext';
 
 function EditStory(props) {
+  // bring in UserContext
   const [userContext, setUserContext] = useContext(UserContext);
 
   const { id } = useParams();
   const navigate = useNavigate();
+
+  // create a story model to be submitted
   const [story, setStory] = useState({
     title: '',
     author: '',
     photo_url: '',
     content: '',
   });
+
   // Get the data from specified article
   useEffect(() => {
     axios
@@ -37,7 +42,7 @@ function EditStory(props) {
       })
       .then((res) => {
         navigate(`/stories/${id}`);
-      })
+      });
   };
 
   const handleSubmit = (e) => {
