@@ -36,7 +36,7 @@ function Navigation(props) {
 				<Link to='/' className={styles.heroimg}>
 					<img src={logo} alt='company logo' />
 				</Link>
-				{/* {menu ? (
+				{menu ? (
 					<div className={styles.links}>
 						<Link to='/' className={styles.addLink}>
 							Home
@@ -54,8 +54,8 @@ function Navigation(props) {
 				) : (
 					''
 				)}
-				<FiMenu onClick={toggleMenu} /> */}
 				<FiMenu onClick={toggleMenu} />
+				{/* <FiMenu onClick={toggleMenu} /> */}
 			</div>
 		</div>
 	);
