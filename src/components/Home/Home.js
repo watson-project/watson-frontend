@@ -10,7 +10,6 @@ function Home(props) {
   const [loading, setLoading] = useState(false);
   const [userContext, setUserContext] = useContext(UserContext);
   useEffect(() => {
-    console.log(userContext);
   }, [userContext]);
   useEffect(() => {
     // timeout for fetching the data

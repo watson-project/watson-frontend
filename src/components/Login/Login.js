@@ -22,19 +22,14 @@ function Login(props) {
     axios
       .post(`https://watson-project.herokuapp.com/api/signin`, user)
       .then((res) => {
-        console.log(res);
         if (res.data === 'The provided username or password is incorrect') {
           setErrMsg(res.data);
         }
         if (res.data !== 'The provided username or password is incorrect') {
-          console.log(res);
           setUserContext((user) => {
             navigate('/');
-            console.log(res);
             return { ...user, token: res.data.token };
           });
-          // setUserContext({...user, token: res.data.token });
-          // navigate('/');
         }
       });
   };
@@ -67,7 +62,7 @@ function Login(props) {
           <label htmlFor='email'>Email:</label>
           <input
             id='email'
-            type='text'
+            type='email'
             value={user.email}
             placeholder='email'
             onChange={handleChange}

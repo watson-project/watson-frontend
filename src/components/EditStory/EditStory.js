@@ -9,7 +9,8 @@ import { UserContext } from '../../context/UserContext';
 
 function EditStory(props) {
   const [userContext, setUserContext] = useContext(UserContext);
-  console.log(userContext);
+  const [modal, setModal] = useState(false);
+
   const { id } = useParams();
   const navigate = useNavigate();
   const [story, setStory] = useState({
@@ -18,12 +19,19 @@ function EditStory(props) {
     photo_url: '',
     content: '',
   });
+  useEffect(() => {
+      const checkUser = () => {
+        if (userContext) {
+          setModal(true);
+        }
+      };
+      checkUser();
+    }, [userContext]);
   // Get the data from specified article
   useEffect(() => {
     axios
       .get(`https://watson-project.herokuapp.com/api/articles/${id}`)
       .then((res) => {
-        console.log(res.data);
         setStory(res.data);
       });
   }, [id]);
@@ -31,13 +39,16 @@ function EditStory(props) {
   // use axios to PUT new data in edit page
   const editArticle = () => {
     axios
-      .put(`https://watson-project.herokuapp.com/api/articles/${id}`, story)
+      .put(`https://watson-project.herokuapp.com/api/articles/${id}`, story, {
+        headers: {
+          Authorization: `Bearer ${userContext.token}`,
+        },
+      })
       .then((res) => {
-        console.log(res.data);
         navigate(`/stories/${id}`);
       });
   };
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
     editArticle();
@@ -45,50 +56,63 @@ function EditStory(props) {
   const handleChange = (e) => {
     setStory({ ...story, [e.target.id]: e.target.value });
   };
+
+
+
+
   return (
-    <div className={styles.addContainer}>
-      <h3>Edit Post</h3>
-      <form onSubmit={handleSubmit} className={styles.form}>
-        <label htmlFor='author'>Author</label>
-        <input
-          type='text'
-          onChange={handleChange}
-          id='author'
-          value={story.author}
-          placeholder='Author'
-        />
-        <label htmlFor='title'>Title</label>
-        <input
-          type='text'
-          onChange={handleChange}
-          id='title'
-          value={story.title}
-          placeholder='Title'
-        />
-        <label htmlFor='photo_url'>Photo URL</label>
-        <input
-          type='text'
-          onChange={handleChange}
-          id='photo_url'
-          value={story.photo_url}
-          placeholder='Photo URL'
-        />
-        <label htmlFor='content'>Content</label>
-        <textarea
-          type='text'
-          onChange={handleChange}
-          id='content'
-          className={styles.content}
-          value={story.content}
-          placeholder='Story...'
-          rows='15'
-          cols='50'
-        />
-        <button type='submit' className={styles.addBtn}>
-          Edit Post
-        </button>
-      </form>
-    </div>
+    <>
+      {modal ? (
+        <div className={styles.editContainer}>
+          <div className={styles.bgContainer}></div>
+          <h3>Edit Article</h3>
+          <div className={styles.textContainer}>
+            <form onSubmit={handleSubmit} className={styles.form}>
+              <label htmlFor='author'>Author</label>
+              <input
+                type='text'
+                onChange={handleChange}
+                id='author'
+                value={story.author}
+                placeholder='Author'
+              />
+              <label htmlFor='title'>Title</label>
+              <input
+                type='text'
+                onChange={handleChange}
+                id='title'
+                value={story.title}
+                placeholder='Title'
+              />
+              <label htmlFor='photo_url'>Photo URL</label>
+              <input
+                type='text'
+                onChange={handleChange}
+                id='photo_url'
+                value={story.photo_url}
+                placeholder='Photo URL'
+              />
+              <label htmlFor='content'>Content</label>
+              <textarea
+                type='text'
+                onChange={handleChange}
+                id='content'
+                className={styles.content}
+                value={story.content}
+                placeholder='Story...'
+                rows='15'
+                cols='50'
+              />
+              <button type='submit' className={styles.editBtn}>
+                Submit Changes
+              </button>
+            </form>
+          </div>
+        </div>
+      ) : (
+        <h2>Hello</h2>
+      )}
+    </>
   );
 }
 

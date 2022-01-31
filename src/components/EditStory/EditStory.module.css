@@ -1,14 +1,49 @@
-.addContainer {
+/* Main Container */
+.editContainer {
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0 1rem;
 }
-/* Add New Post */
-.addContainer h3 {
-  margin: 1.5rem 0;
-  font-weight: 200;
+/* Background Container */
+.bgContainer {
+  height: 100vh;
+  width: 100vw;
+  clip-path: circle(100% at 50% 0);
+  background: linear-gradient(180deg, rgb(247, 159, 88), #f89829);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  margin-top: -50vh;
+  z-index: -1;
+  margin-bottom: auto;
+}
+/* Text Box Container */
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px,
+    rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px,
+    rgba(0, 0, 0, 0.07) 0px 16px 16px;
+  padding-top: 2rem;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 600px;
+}
+/* "Add A New Article" Text */
+.editContainer h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+  margin: 1rem 0;
+  font-weight: 400;
+  color: black;
+  animation: fade 1s ease forwards;
+  opacity: 0;
 }
 /* Form */
 .form {
@@ -17,85 +52,87 @@
   width: 100%;
   min-width: 200px;
   padding: 0 2rem;
+  transition: all 0.2s ease;
 }
-/* Form Label */
+/* Form Labels */
 .form label {
   font-size: 14px;
-  font-weight: 200;
+  font-weight: 400;
   margin-bottom: 0.5rem;
+  font-family: 'Poppins', sans-serif;
+  color: #454545;
 }
-/* Form Input */
+/* Form Inputs */
 .form input {
-  background-color: #e4e2d8;
+  /* background-color: #e4e2d8; */
+  background-color: #f5f5f5;
   border: none;
   border-radius: 5px;
-  height: 30px;
+  height: 50px;
+  width: 100%;
   padding: 0 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.8rem;
   font-size: 14px;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Karla', sans-serif;
 }
 /* Form TextArea */
 .form textarea {
-  background-color: #e4e2d8;
+  background-color: #f5f5f5;
   border: none;
   border-radius: 5px;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   overflow-y: scroll;
   padding: 1rem 1rem;
   font-size: 14px;
   text-align: left;
-  max-width: 435px;
-  font-family: 'Poppins', sans-serif;
+  width: 100%;
+  max-width: 535px;
+  max-height: 300px;
+  font-family: 'Karla', sans-serif;
 }
-/* Delete Button */
+/* "Add Post" Button */
 .form button {
-  color: white;
-  width: 120px;
+  color: #f89829;
   height: 40px;
-  border: none;
+  width: 150px;
   border-radius: 5px;
-  background-color: #6d60f9;
+  background-color: transparent;
+  border: 2px solid #f89829;
   margin: 0 auto;
   margin-bottom: 2rem;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Bebas Neue', cursive;
   font-weight: 200;
-  font-size: 14px;
+  font-size: 20px;
   cursor: pointer;
   transition: all 0.2s ease;
 }
+/* Button Hover State */
 .form button:hover {
+  background-color: #f89829;
+  font-family: 'Bebas Neue', cursive;
   color: white;
-  width: 120px;
-  height: 40px;
-  border: none;
-  border-radius: 5px;
-  background-color: #594bf1;
-  margin: 0 auto;
-  margin-bottom: 2rem;
-  font-family: 'Playfair Display', serif;
-  font-weight: 200;
-  font-size: 14px;
 }
+/* Button Active State */
 .form button:active {
+  background-color: #eb8b1e;
+  border-color: #eb8b1e;
+  font-family: 'Bebas Neue', cursive;
   color: white;
-  width: 120px;
-  height: 40px;
-  border: none;
-  border-radius: 5px;
-  background-color: #695ee7;
-  margin: 0 auto;
-  margin-bottom: 2rem;
-  font-family: 'Playfair Display', serif;
-  font-weight: 200;
-  font-size: 14px;
-  box-shadow: inset 0px 2px 2px 0px rgba(54, 54, 54, 0.5);
-  transition: none;
 }
-/* Media Query for Desktop */
-@media (min-width: 500px) {
-  .addContainer {
-    max-width: 500px;
-    margin: 0 auto;
+
+@media (max-width: 600px) {
+  .form {
+    padding: 0 1rem;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 100%;
+    transform: translateY(0px);
   }
 }

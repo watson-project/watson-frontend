@@ -40,17 +40,14 @@ function StoryFeed(props) {
   if (loading && !stories.length) {
     return <h2>Loading...</h2>;
   }
-  // if (!loading && !stories.length) {
-  //   return <h2>Something went wrong</h2>;
-  // }
+  
 
   return (
     <div className={styles.feedContainer}>
       {/* <img src={vector} alt='background' className={styles.vector} /> */}
       {/* <div className={styles.vector}></div> */}
       <div className={styles.headerText}>
-        <h4>Articles</h4>
-        <input type='text' />
+        <h1>Articles</h1>
         <Link to='/add-story'>
           <AiOutlinePlus />
         </Link>

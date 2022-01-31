@@ -1,14 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Navigate, useNavigate, useParams } from 'react-router-dom';
 import styles from './Story.module.css';
 import notFound from '../../assets/not-found.jpg';
 import moment from 'moment';
 import axios from 'axios';
+import { UserContext } from '../../context/UserContext';
 
 function Story(props) {
   const { id } = useParams();
   const navigate = useNavigate();
   const [modal, setModal] = useState(false);
+  const [userContext, setUserContext] = useContext(UserContext);
+  const [errMsg, setErrMsg] = useState(null);
 
   const [story, setStory] = useState(null);
   async function getStory() {
@@ -17,7 +20,6 @@ function Story(props) {
         `https://watson-project.herokuapp.com/api/articles/${id}`
       );
       const data = await res.json();
-      console.log(data);
       setStory(data);
     } catch (error) {
       console.log(error);
@@ -31,9 +33,16 @@ function Story(props) {
 
   const handleDelete = () => {
     axios
-      .delete(`https://watson-project.herokuapp.com/api/articles/${id}`)
+      .delete(`https://watson-project.herokuapp.com/api/articles/${id}`, {
+        headers: {
+          Authorization: `Bearer ${userContext.token}`,
+        },
+      })
       .then((res) => {
         navigate('/stories');
+      })
+      .catch((error) => {
+        setErrMsg(error);
       });
   };
   function navigateEdit() {
@@ -45,6 +54,7 @@ function Story(props) {
   };
   const closeModal = () => {
     setModal(false);
+    setErrMsg(null);
   };
   return (
     <>
@@ -53,7 +63,11 @@ function Story(props) {
           <div className={styles.bgContainer}></div>
 
           <div className={styles.modalText}>
-            <h2>Are you sure you want to delete this article?</h2>
+            {!errMsg ? (
+              <h2>Are you sure you want to delete this article?</h2>
+            ) : (
+              <h2>You are not authorized to delete this article!</h2>
+            )}
             <button className={styles.deleteBtn} onClick={handleDelete}>
               Delete
             </button>

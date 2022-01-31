@@ -2,8 +2,13 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import styles from './Register.module.css';
 import axios from 'axios';
+import { useRef } from 'react';
+import { AiFillEye } from 'react-icons/ai';
+
 
 function Register(props) {
+    const togglePass = useRef(null);
+    const [showPass, setShowPass] = useState(false);
   const [registered, setRegistered] = useState({
     email: '',
     password: '',
@@ -14,8 +19,6 @@ function Register(props) {
     axios
       .post('https://watson-project.herokuapp.com/api/signup', registered)
       .then((res) => {
-        console.log(registered);
-        console.log(res);
         navigate('/login');
       });
   };
@@ -28,6 +31,17 @@ function Register(props) {
   const handleChange = (event) => {
     setRegistered({ ...registered, [event.target.id]: event.target.value });
   };
+
+    const showPassword = () => {
+      if (showPass) {
+        togglePass.current.attributes['1'].value = 'text';
+      }
+      if (!showPass) {
+        togglePass.current.attributes['1'].value = 'password';
+      }
+      setShowPass(!showPass);
+    };
+
   return (
     <div>
       <div className={styles.addContainer}>
@@ -38,21 +52,31 @@ function Register(props) {
             <label htmlFor='email'>Email:</label>
             <input
               id='email'
-              type='text'
+              type='email'
               value={registered.email}
               placeholder='email'
               onChange={handleChange}
               autoComplete='off'
             />
             <label htmlFor='password'>Password:</label>
-            <input
-              id='password'
-              type='text'
-              value={registered.password}
-              placeholder='password'
-              onChange={handleChange}
-              autoComplete='off'
-            />
+            <div className={styles.passwordDiv}>
+              <input
+                ref={togglePass}
+                id='password'
+                className={styles.password}
+                type='password'
+                value={registered.password}
+                placeholder='password'
+                onChange={handleChange}
+                autoComplete='off'
+              />
+              <button
+                type='button'
+                onClick={showPassword}
+                className={styles.toggleEye}>
+                <AiFillEye />
+              </button>
+            </div>
             <button className={styles.loginBtn} type='submit'>
               Register
             </button>

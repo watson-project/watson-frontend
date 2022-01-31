@@ -9,18 +9,16 @@
 }
 /* Background Container */
 .bgContainer {
-  height: 50vh;
   width: 100vw;
   clip-path: circle(100% at 50% 0);
   background: linear-gradient(180deg, rgba(47, 109, 241, 100%), #263455);
-  height: 60vh;
+  height: 90vh;
   background-size: cover;
   background-repeat: no-repeat;
   position: absolute;
   z-index: -1;
   margin-bottom: auto;
 }
-
 /* Text Box Container */
 .textContainer {
   display: flex;
@@ -124,16 +122,12 @@
 .form .registerBtn {
   color: rgb(115, 168, 218);
   font-family: 'Poppins', cursive;
-  /* padding-bottom: 2%; */
   display: flex;
   justify-content: center;
-  /* margin-bottom: 5px; */
   text-decoration: none;
 }
-
 .registerText {
   color: #2d6cf1;
-  /* border: 2px solid red;  */
   max-width: fit-content;
   display: flex;
   justify-content: space-around;
@@ -143,19 +137,16 @@
   margin-bottom: 5px;
   font-family: 'Poppins', cursive;
 }
-
 .registerText a:hover {
   color: rgba(0, 0, 0, 0.07);
 }
 /* Error Message */
 .errMsg {
-  /* border: 1px solid red; */
   text-align: center;
   margin-bottom: 1rem;
   font-family: 'Poppins', sans-serif;
   color: rgb(247, 48, 48);
 }
-
 /* Password Div */
 .passwordDiv {
   display: flex;
@@ -168,13 +159,11 @@
   width: 50px;
   margin-bottom: 1.8rem;
 }
-
 @media (max-width: 600px) {
   .form {
     padding: 0 1rem;
   }
 }
-
 @keyframes fade {
   0% {
     opacity: 0;

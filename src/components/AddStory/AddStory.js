@@ -17,12 +17,6 @@ function AddStory(props) {
   });
 
   const createNewStory = () => {
-    // axios
-    //   .post(`http://localhost:4000/api/articles`, story)
-    //   .then((res) => {
-    //     console.log(res);
-    //     navigate('/stories');
-    //   });
     fetch(`https://watson-project.herokuapp.com/api/articles`, {
       method: 'POST',
       body: JSON.stringify(story),
@@ -90,7 +84,7 @@ function AddStory(props) {
             cols='50'
           />
           <button type='submit' className={styles.addBtn}>
-            Add Post
+            Add Article
           </button>
         </form>
       </div>
