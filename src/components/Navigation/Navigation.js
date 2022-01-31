@@ -4,30 +4,30 @@ import { Link } from 'react-router-dom';
 import styles from './Navigation.module.css';
 // logo
 import logo from '../../assets/logo-small.png';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 import { FiMenu } from 'react-icons/fi';
 
 function Navigation(props) {
 	const [menu, setMenu] = useState(false);
 
 	const toggleMenu = () => {
-    setMenu(!menu);
-		return (
-			<div className={styles.links}>
-				<Link to='/' className={styles.addLink}>
-					Home
-				</Link>
-				<Link to='/stories' className={styles.addLink}>
-					Dashboard
-				</Link>
-				<Link to='/about' className={styles.addLink}>
-					About
-				</Link>
-				<Link to='/add-story' className={styles.addLink}>
-					Add Story
-				</Link>
-			</div>
-		);
+		setMenu(!menu);
+		// return (
+		// 	<div className={styles.links}>
+		// 		<Link to='/' className={styles.addLink}>
+		// 			Home
+		// 		</Link>
+		// 		<Link to='/stories' className={styles.addLink}>
+		// 			Dashboard
+		// 		</Link>
+		// 		<Link to='/about' className={styles.addLink}>
+		// 			About
+		// 		</Link>
+		// 		<Link to='/add-story' className={styles.addLink}>
+		// 			Add Story
+		// 		</Link>
+		// 	</div>
+		// );
 	};
 
 	return (
@@ -36,7 +36,7 @@ function Navigation(props) {
 				<Link to='/' className={styles.heroimg}>
 					<img src={logo} alt='company logo' />
 				</Link>
-				{/* {menu ? (
+				{menu ? (
 					<div className={styles.links}>
 						<Link to='/' className={styles.addLink}>
 							Home
@@ -54,8 +54,8 @@ function Navigation(props) {
 				) : (
 					''
 				)}
-				<FiMenu onClick={toggleMenu} /> */}
 				<FiMenu onClick={toggleMenu} />
+				{/* <FiMenu onClick={toggleMenu} /> */}
 			</div>
 		</div>
 	);
