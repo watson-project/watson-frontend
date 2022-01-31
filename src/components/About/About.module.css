@@ -1,78 +1,94 @@
+/* Container for About */
 .aboutContainer {
+	height: calc(100vh - 80px);
+}
+
+/* Background */
+.bgContainer {
+	background-image: url(../../assets/background-image1.jpg);
+	height: 90vh;
+	width: 100vw;
+	background-size: cover;
+	object-fit: contain;
+	background-repeat: no-repeat;
+	z-index: -1;
+}
+
+/* Box Container for Our Story*/
+.storyContainer {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	max-width: 100vh;
-	margin: auto;
-	height: calc(100vh - 185px);
+	text-align: center;
+	margin-top: 7rem;
+	animation: fadeInUp 1s ease forwards;
+	animation-delay: 1s;
 }
 
-.storyContainer {
-	display: flex;
-    flex-direction: column;
-	justify-content: center;
-	align-items: center;
-    text-align: center;
-}
-
-.storyContainer span {
-    margin-bottom: 10px;
-    font-weight: 500;
-}
-
+/* Paragraph Container */
 .textContainer {
 	/* height: 50vh; */
-    display: flex;
-    align-items: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	width: 450px;
-    height: 300px;
-    padding: 5px;
+	height: 350px;
+	padding: 5px;
 	margin: auto;
-    border: 1px solid black;
+	padding-top: 3rem;
+	background-color: white;
+	box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+	font-family: 'Poppins';
+	border-radius: 2px;
 }
 
-.imageContainer {
-	max-width: 25%;
-}
-
+/* Listener. Container */
 .listenerContainer {
 	font-weight: 1000;
 }
 
+/* Title Container */
 .titleContainer {
-	font-weight: 100;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding: 25px 0 0 0;
-    height: 100px;
-	clip-path: circle(95% at 50% 0);
-	/* background: linear-gradient(180deg, #4477eb, #2050c3); */
-	background: linear-gradient(180deg, rgb(152, 180, 240), #265ad7);
+	text-align: center;
+	padding-top: 25px;
+	font-family: 'Karla';
+	animation: fadeInUp 1s ease forwards;
+	animation-delay: 1s;
 }
 
+/* Developer Container */
+.developerContainer {
+	text-decoration: none;
+	background-color: white;
+	width: 30rem;
+	text-align: center;
+	margin: auto;
+	margin-top: 50px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+	font-family: 'Poppins';
+	animation: fadeInUp 1s ease forwards;
+	animation-delay: 1s;
+	border-radius: 2px;
+}
 .developerContainer a {
 	text-decoration: none;
 	color: #111111;
 }
 
 .developerContainer a:hover {
-	color: #ff2323;
+	color: #64a0e4;
 }
 
-.aboutContainer h4 {
-	font-weight: 500;
-}
-
-.blobs {
-    
-    width: 500px;
-    opacity: 55%;
-    z-index: -1;
-    position: absolute;
-}
-
-.blobL path {
-    fill: yellow;
+@keyframes fadeInUp {
+	0% {
+		opacity: 0;
+		transform: translateY(8px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0px);
+	}
 }

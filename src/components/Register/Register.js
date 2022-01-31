@@ -6,20 +6,22 @@ import axios from 'axios';
 function Register(props) {
 	const [registered, setRegistered] = useState({
 		email: '',
-		password: ''
+		password: '',
 	});
 	const navigate = useNavigate();
 
 	const handleRegistered = () => {
-        axios.post('https://watson-project.herokuapp.com/api/signup', registered).then((res) =>{ 
-            navigate('/');
-        });
-    };
+		axios
+			.post('https://watson-project.herokuapp.com/api/signup', registered)
+			.then((res) => {
+				navigate('/');
+			});
+	};
 
 	const handleSubmit = (event) => {
-        event.preventDefault();
-        handleRegistered();
-    };
+		event.preventDefault();
+		handleRegistered();
+	};
 
 	const handleChange = (event) => {
 		setRegistered({ ...registered, [event.target.id]: event.target.value });
