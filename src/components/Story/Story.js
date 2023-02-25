@@ -40,17 +40,17 @@ function Story(props) {
   // Delete article
   const handleDelete = () => {
     axios
-      .delete(`https://watson-project.herokuapp.com/api/articles/${id}`, {
-        headers: {
-          Authorization: `Bearer ${userContext.token}`,
-        },
-      })
-      .then((res) => {
-        navigate('/stories');
-      })
-      .catch((error) => {
-        setErrMsg(error);
-      });
+			.delete(`https://thewatson-backend.herokuapp.com/api/articles${id}`, {
+				headers: {
+					Authorization: `Bearer ${userContext.token}`,
+				},
+			})
+			.then((res) => {
+				navigate('/stories');
+			})
+			.catch((error) => {
+				setErrMsg(error);
+			});
   };
   // Navigate to edit article page
   function navigateEdit() {

@@ -21,20 +21,20 @@ function AddStory(props) {
 
   // create a function that posts a new article
   const createNewStory = () => {
-    fetch(`https://watson-project.herokuapp.com/api/articles`, {
-      method: 'POST',
-      body: JSON.stringify(story),
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${userContext.token}`,
-      },
-    })
-      .then((res) => {
-        return res.json();
-      })
-      .then((res) => {
-        navigate('/stories');
-      });
+    fetch(`https://thewatson-backend.herokuapp.com/api/articles`, {
+			method: 'POST',
+			body: JSON.stringify(story),
+			headers: {
+				'Content-Type': 'application/json',
+				Authorization: `Bearer ${userContext.token}`,
+			},
+		})
+			.then((res) => {
+				return res.json();
+			})
+			.then((res) => {
+				navigate('/stories');
+			});
   };
 
   const handleSubmit = (e) => {

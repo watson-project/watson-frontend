@@ -19,10 +19,13 @@ function Register(props) {
 
   const handleRegistered = () => {
     axios
-      .post('https://watson-project.herokuapp.com/api/signup', registered)
-      .then((res) => {
-        navigate('/login');
-      });
+			.post(
+				'https://thewatson-backend.herokuapp.com/api/signup',
+				registered
+			)
+			.then((res) => {
+				navigate('/login');
+			});
   };
 
   const handleSubmit = (event) => {

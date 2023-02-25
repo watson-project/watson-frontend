@@ -22,17 +22,17 @@ function Home(props) {
       }
     }, 5000);
     // Axios request
-    fetch('https://watson-project.herokuapp.com/api/articles')
-      .then((res) => res.json())
-      .then((res) => {
-        // Shuffle the res from api
-        // After shuffle, slice the first 3 objects and setStories(shuffled);
-        // https://stackoverflow.com/questions/19269545/how-to-get-a-number-of-random-elements-from-an-array
-        let shuffled = res
-          .sort(() => Math.random() - Math.random())
-          .slice(0, 3);
-        setStories(shuffled);
-      });
+    fetch('https://thewatson-backend.herokuapp.com/api/articles')
+			.then((res) => res.json())
+			.then((res) => {
+				// Shuffle the res from api
+				// After shuffle, slice the first 3 objects and setStories(shuffled);
+				// https://stackoverflow.com/questions/19269545/how-to-get-a-number-of-random-elements-from-an-array
+				let shuffled = res
+					.sort(() => Math.random() - Math.random())
+					.slice(0, 3);
+				setStories(shuffled);
+			});
     // clear timeout
     return () => clearTimeout(handleLoadingTimeOut);
   }, []);

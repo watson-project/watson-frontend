@@ -24,11 +24,11 @@ function StoryFeed(props) {
   });
 
   const fetchArticles = () => {
-    fetch(`https://watson-project.herokuapp.com/api/articles/`)
-      .then((res) => res.json())
-      .then((res) => {
-        setStories(res);
-      });
+    fetch(`https://thewatson-backend.herokuapp.com/api/articles`)
+			.then((res) => res.json())
+			.then((res) => {
+				setStories(res);
+			});
   };
 
   useEffect(() => {

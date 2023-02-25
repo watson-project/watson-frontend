@@ -26,10 +26,10 @@ function EditStory(props) {
   // Get the data from specified article
   useEffect(() => {
     axios
-      .get(`https://watson-project.herokuapp.com/api/articles/${id}`)
-      .then((res) => {
-        setStory(res.data);
-      });
+			.get(`https://thewatson-backend.herokuapp.com/api/articles${id}`)
+			.then((res) => {
+				setStory(res.data);
+			});
   }, [id]);
 
   // use axios to PUT new data in edit page

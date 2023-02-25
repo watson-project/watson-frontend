@@ -25,18 +25,18 @@ function Login(props) {
 
   const handleLogIn = () => {
     axios
-      .post(`https://watson-project.herokuapp.com/api/signin`, user)
-      .then((res) => {
-        if (res.data === 'The provided username or password is incorrect') {
-          setErrMsg(res.data);
-        }
-        if (res.data !== 'The provided username or password is incorrect') {
-          setUserContext((user) => {
-            navigate('/');
-            return { ...user, token: res.data.token };
-          });
-        }
-      });
+			.post(`https://thewatson-backend.herokuapp.com/api/signin`, user)
+			.then((res) => {
+				if (res.data === 'The provided username or password is incorrect') {
+					setErrMsg(res.data);
+				}
+				if (res.data !== 'The provided username or password is incorrect') {
+					setUserContext((user) => {
+						navigate('/');
+						return { ...user, token: res.data.token };
+					});
+				}
+			});
   };
 
   const handleSubmit = (event) => {
